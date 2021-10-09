@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorSecondary">
+    <TextView
+        android:id="@+id/mainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mainTitle"
+        android:textStyle="bold"
+        android:textSize="12pt"
+        android:textColor="@color/black"
+        android:background="@color/lightBackground"
+        android:gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dataView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightBackground"
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
