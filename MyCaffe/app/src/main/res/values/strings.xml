@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyCaffe</string>
     <string name="mainTitle">Menu</string>
+    <string-array name="Menu_caffe">
+        <item>Esspresso</item>
+        <item>Capucino</item>
+        <item>Americano</item>
+        <item>Frapucino</item>
+        <item>Latte</item>
+    </string-array>
 </resources>
