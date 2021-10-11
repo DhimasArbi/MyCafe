@@ -20,6 +20,6 @@
         android:id="@+id/dataView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/lightBackground"
+        android:background="@color/colorPrimaryDark"
         android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

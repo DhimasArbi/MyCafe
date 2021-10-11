@@ -1,11 +1,25 @@
 <resources>
     <string name="app_name">MyCaffe</string>
     <string name="mainTitle">Menu</string>
-    <string-array name="Menu_caffe">
+    <string-array name="caffe_title">
         <item>Esspresso</item>
         <item>Capucino</item>
         <item>Americano</item>
         <item>Frapucino</item>
         <item>Latte</item>
+    </string-array>
+    <string-array name="caffe_info">
+        <item>Espresso Sedap</item>
+        <item>Capucino Mantap</item>
+        <item>Americano Enak</item>
+        <item>Frapucino Good</item>
+        <item>Latte Best</item>
+    </string-array>
+    <string-array name="caffe_icon">
+        <item>espresso</item>
+        <item>capucino</item>
+        <item>americano</item>
+        <item>frapuccino</item>
+        <item>latte</item>
     </string-array>
 </resources>

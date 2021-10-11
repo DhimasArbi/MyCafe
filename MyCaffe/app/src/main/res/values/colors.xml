@@ -13,4 +13,12 @@
     <color name="colorSecondary">#71EFA3</color>
     <color name="lightBackground">#FFFFFF</color>
     <color name="textTitle">#FCF08F</color>
+
+    <array name="menu_color">
+        <item>#FFEB3B</item>
+        <item>#FAC2C6</item>
+        <item>#A2FA92</item>
+        <item>#7491FF</item>
+        <item>#F1B1FF</item>
+    </array>
 </resources>
