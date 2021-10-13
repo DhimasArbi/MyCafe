@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
@@ -25,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         rcView = (RecyclerView) findViewById(R.id.dataView);
         rcView.setLayoutManager(new LinearLayoutManager(this));
         loadCaffeData();
+        mAdapter.setOnItemClickListener(new DataAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                TextView itemTitle = (TextView) view.findViewById(R.id.nmMenu);
+                openOrderActivity(itemTitle.getText().toString());
+            }
+        });
     }
 
     public static int getId(String resourceName, Class<?> c) {
@@ -39,13 +47,13 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<DataItem> getCaffeData() {
         //Get the resources from the XML file
         String[] listTitles = getResources().getStringArray(R.array.caffe_title);
-//        int[] listColor = getResources().getIntArray(R.array.menu_color);
+        int[] listColor = getResources().getIntArray(R.array.menu_color);
         String[] listInfo = getResources().getStringArray(R.array.caffe_info);
         String[] listIcon = getResources().getStringArray(R.array.caffe_icon);
         ArrayList<DataItem> data = new ArrayList<>();
         //Create the ArrayList with the titles and information
         for (int i=0; i<listTitles.length; i++) {
-            data.add(new DataItem(listTitles[i], getId(listIcon[i],R.drawable.class)));
+            data.add(new DataItem(listTitles[i], listColor[i], getId(listIcon[i],R.drawable.class)));
         }
         return data;
     }
@@ -60,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    private void openMediaActivity(String title) {
-        Intent media = new Intent(getApplicationContext(),OrderActivity.class);
+    private void openOrderActivity(String title) {
+        Intent media = new Intent(getApplicationContext(), OrderActivity.class);
+        media.putExtra("NAMA_MENU", title);
         startActivity(media);
     }
 }

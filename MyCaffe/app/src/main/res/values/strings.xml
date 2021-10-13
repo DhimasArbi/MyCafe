@@ -3,7 +3,7 @@
     <string name="mainTitle">Menu</string>
     <string-array name="caffe_title">
         <item>Esspresso</item>
-        <item>Capucino</item>
+        <item>Cappucino</item>
         <item>Americano</item>
         <item>Frapucino</item>
         <item>Latte</item>

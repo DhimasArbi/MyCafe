@@ -5,10 +5,10 @@ public class DataItem {
     private String info;
     private int color;
     private int icon;
-    public DataItem(String mTitle, int mIcon) {
+    public DataItem(String mTitle, int mColor, int mIcon) {
         title = mTitle;
 //        info = mInfo;
-//        color = mColor;
+        color = mColor;
         icon = mIcon;
     }
     public String getTitle() {
