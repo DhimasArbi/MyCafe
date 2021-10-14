@@ -41,7 +41,31 @@
             android:layout_height="2dp"
             android:background="@color/colorAccent"/>
 
+<<<<<<< HEAD
 
+=======
+    <CheckBox
+        android:id="@+id/tbhkrim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:text="Krim"
+        android:textSize="7pt"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="143dp">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/tbhCoklat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:text="Coklat"
+        android:textSize="7pt"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="92dp">
+    </CheckBox>
+>>>>>>> af3d3d19d296c49b39ba40998add2f7dc7a9a41c
 
         <TextView
             android:layout_width="wrap_content"
@@ -81,11 +105,20 @@
                 android:layout_height="48dp" />
         </LinearLayout>
 
+<<<<<<< HEAD
         <View
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorAccent"/>
+=======
+        <Button
+            android:id="@+id/buttonKurang"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="-">
+        </Button>
+>>>>>>> af3d3d19d296c49b39ba40998add2f7dc7a9a41c
 
         <TextView
             android:layout_width="wrap_content"
@@ -102,11 +135,52 @@
             android:id="@+id/price_textview"
             android:textSize="25dp"/>
         <Button
+<<<<<<< HEAD
             android:layout_width="wrap_content"
             android:layout_marginBottom="16dp"
             android:onClick="Submitorder"
             android:layout_height="wrap_content"
             android:text="Pesan Sekarang"/>
+=======
+            android:id="@+id/buttonTambah"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="+">
+        </Button>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Harga"
+        android:textSize="8pt"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="310dp"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/price_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="#212121"
+        android:textSize="25dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="355dp"
+        android:layout_marginTop="10dp">
+    </TextView>
+
+    <Button
+        android:id="@+id/buttonPesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Pesan Sekarang"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="409dp"></Button>
+>>>>>>> af3d3d19d296c49b39ba40998add2f7dc7a9a41c
 
 
     </LinearLayout>
