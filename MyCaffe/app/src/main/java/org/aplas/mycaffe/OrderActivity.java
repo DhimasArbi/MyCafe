@@ -34,7 +34,7 @@ public class OrderActivity extends AppCompatActivity {
         edtName = (EditText)findViewById(R.id.edt_name);
         krim = (CheckBox) findViewById(R.id.tbhkrim);
         cokelat = (CheckBox) findViewById(R.id.tbhCoklat);
-        priceTextView = (TextView) findViewById(R.id.price_textview);
+        priceTextView = (TextView) findViewById(R.id.orderINFO);
         TextView nmMenu = (TextView) findViewById(R.id.nmMenu);
         TextView descMenu = (TextView) findViewById(R.id.menuInfo);
         nmMenu.setText(getIntent().getStringExtra("NAMA_MENU"));
@@ -134,15 +134,15 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void displayMessage(String message) {
-        priceTextView = (TextView) findViewById(R.id.price_textview);
+        priceTextView = (TextView) findViewById(R.id.orderINFO);
         priceTextView.setText(message);
     }
     private void display(int number) {
-        quantityTextView = (TextView) findViewById(R.id.quantity_textview);
+        quantityTextView = (TextView) findViewById(R.id.quantity);
         quantityTextView.setText("" + number);
     }
     private void displayPrice(int number) {
-        priceTextView = (TextView) findViewById(R.id.price_textview);
+        priceTextView = (TextView) findViewById(R.id.orderINFO);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
