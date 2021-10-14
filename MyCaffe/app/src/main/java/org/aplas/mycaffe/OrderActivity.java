@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,70 +19,104 @@ public class OrderActivity extends AppCompatActivity {
     private EditText edtName;
     private CheckBox krim, cokelat;
     private TextView priceTextView, quantityTextView;
+    private Button inc,dec, pesan;
     private int quantity = 0, harga = 0;
-    
+    private static int hrgAmericano = 32000, hrgCappucino = 42000,
+            hrgEsspresso= 42000, hrgFrapucino = 44000, hrgLatte = 42000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        String title = getIntent().getStringExtra("NAMA_MENU");
-        if(title=="Esspresso"){
-            harga=42000;
-        }else if(title=="Cappucino"){
-            harga = 42000;
-        }else if(title=="Americano"){
-            harga = 32000;
-        }else if(title=="Frapucino"){
-            harga = 44000;
-        }else{
-            harga = 42000;
-        }
+        inc = (Button) findViewById(R.id.buttonTambah);
+        dec = (Button) findViewById(R.id.buttonKurang);
+        pesan = (Button) findViewById(R.id.buttonPesan);
+        edtName = (EditText)findViewById(R.id.edt_name);
+        krim = (CheckBox) findViewById(R.id.tbhkrim);
+        cokelat = (CheckBox) findViewById(R.id.tbhCoklat);
+        priceTextView = (TextView) findViewById(R.id.price_textview);
+
+        dec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (quantity==1){
+                    Toast.makeText(OrderActivity.this,"pesanan minimal 1", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                quantity = quantity -1;
+                display(quantity);
+            }
+        });
+        inc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quantity==10){
+                    Toast.makeText(OrderActivity.this,"Pesanan maximal 10",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                quantity = quantity+1 ;
+                display(quantity);
+            }
+        });
+
+        pesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String title = getIntent().getStringExtra("NAMA_MENU");
+                String name = edtName.getText().toString();
+                boolean haswhippedcream = krim.isChecked();
+                boolean haschocolate = cokelat.isChecked();
+
+                setHarga(title,haswhippedcream, haschocolate);
+                int price = harga * quantity;
+                String pricemessage = createOrderSummary(price,name,haswhippedcream,haschocolate);
+
+                displayMessage(pricemessage);
+            }
+        });
     }
 
-    public void increment(View view){
-        if(quantity==10){
-            Toast.makeText(this,"Pesanan maximal 10",Toast.LENGTH_SHORT).show();
-            return;
+    private  int setHarga(String title, Boolean tbhKrim, Boolean tbhCoklat){
+        if(tbhKrim){
+            if(title=="Esspresso"){
+                harga=hrgEsspresso+1000;
+            }else if(title=="Cappucino"){
+                harga = hrgCappucino+1000;
+            }else if(title=="Americano"){
+                harga = hrgAmericano+1000;
+            }else if(title=="Frapucino"){
+                harga = hrgFrapucino+1000;
+            }else{
+                harga = hrgLatte+1000;
+            }
         }
-        quantity = quantity+1 ;
-        display(quantity);
-    }
-    public void decrement(View view){
-        if (quantity==1){
-            Toast.makeText(this,"pesanan minimal 1",Toast.LENGTH_SHORT).show();
-            return;
+        if (tbhCoklat){
+            if(title=="Esspresso"){
+                harga=hrgEsspresso+2000;
+            }else if(title=="Cappucino"){
+                harga = hrgCappucino+2000;
+            }else if(title=="Americano"){
+                harga = hrgAmericano+2000;
+            }else if(title=="Frapucino"){
+                harga = hrgFrapucino+2000;
+            }else{
+                harga = hrgLatte+2000;
+            }
         }
-        quantity = quantity -1;
-        display(quantity);
-    }
-
-    public void Submitorder(View view) {
-        EditText nameEditText=(EditText)findViewById(R.id.edt_name);
-        String name=nameEditText.getText().toString();
-        Log.v("MainActivity","Nama:"+name);
-
-        CheckBox whippedcreamChekBox= (CheckBox) findViewById(R.id.WhippedCream_checkbox);
-        boolean haswhippedcream=whippedcreamChekBox.isChecked();
-        Log.v("MainActivity","has whippedcream:"+haswhippedcream);
-
-        CheckBox chocolateChekBox= (CheckBox) findViewById(R.id.Chocolate_checkbox);
-        boolean haschocolate=chocolateChekBox.isChecked();
-        Log.v("MainActivity","has whippedcream:"+haschocolate);
-
-        int price = calculateprice(haswhippedcream,haschocolate);
-        String pricemessage = createOrderSummary(price,name,haswhippedcream,haschocolate);
-
-        displayMessage(pricemessage);
-
-    }
-    private int calculateprice(boolean addwhipedcream, boolean addchocolate){
-        if(addwhipedcream){
-            harga=harga+1000;
+        if (!tbhCoklat && !tbhKrim){
+            if(title=="Esspresso"){
+                harga=hrgEsspresso;
+            }else if(title=="Cappucino"){
+                harga = hrgCappucino;
+            }else if(title=="Americano"){
+                harga = hrgAmericano;
+            }else if(title=="Frapucino"){
+                harga = hrgFrapucino;
+            }else{
+                harga = hrgLatte;
+            }
         }
-        if (addchocolate){
-            harga=harga+2000;
-        }
-        return quantity * harga;
+        return harga;
     }
     private String createOrderSummary(int price, String name, boolean addChocolate, boolean addWhippedCream) {
         String pricemessage=" Nama = "+name;
@@ -93,15 +128,15 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_textview);
+        priceTextView = (TextView) findViewById(R.id.price_textview);
         priceTextView.setText(message);
     }
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_textview);
+        quantityTextView = (TextView) findViewById(R.id.quantity_textview);
         quantityTextView.setText("" + number);
     }
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_textview);
+        priceTextView = (TextView) findViewById(R.id.price_textview);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 }
