@@ -77,4 +77,20 @@ public class MainActivity extends AppCompatActivity {
         media.putExtra("MENU_INFO", info);
         startActivity(media);
     }
+    mAdapter.setOnItemClickListener(new DataAdapter.OnItemClickListener() {
+        @Override
+        public void onItemClick(View view, int position) {
+            TextView itemTitle = (TextView) view.findViewById(R.id.nmMenu);
+            TextView itemInfo = (TextView) view.findViewById(R.id.menuInfo);
+            ImageView itemPicture = (ImageView) view.findViewById(R.id.gbMenu);
+            openOrderActivity(itemTitle.getText().toString(), itemInfo.getText().toString());
+        }
+    });
+
+    private void openOrderActivity(String title, String info) {
+        Intent media = new Intent(getApplicationContext(), OrderActivity.class);
+        media.putExtra("NAMA_MENU", title);
+        media.putExtra("MENU_INFO", info);
+        startActivity(media);
+    }
 }
