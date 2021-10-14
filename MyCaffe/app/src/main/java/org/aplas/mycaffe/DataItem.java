@@ -5,9 +5,9 @@ public class DataItem {
     private String info;
     private int color;
     private int icon;
-    public DataItem(String mTitle, int mColor, int mIcon) {
+    public DataItem(String mTitle,String mInfo, int mColor, int mIcon) {
         title = mTitle;
-//        info = mInfo;
+        info = mInfo;
         color = mColor;
         icon = mIcon;
     }

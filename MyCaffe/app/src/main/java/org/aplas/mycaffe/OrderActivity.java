@@ -18,11 +18,24 @@ public class OrderActivity extends AppCompatActivity {
     private EditText edtName;
     private CheckBox krim, cokelat;
     private TextView priceTextView, quantityTextView;
-    private int quantity = 0, harga = 0;;
+    private int quantity = 0, harga = 0;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
+        String title = getIntent().getStringExtra("NAMA_MENU");
+        if(title=="Esspresso"){
+            harga=42000;
+        }else if(title=="Cappucino"){
+            harga = 42000;
+        }else if(title=="Americano"){
+            harga = 32000;
+        }else if(title=="Frapucino"){
+            harga = 44000;
+        }else{
+            harga = 42000;
+        }
     }
 
     public void increment(View view){
@@ -55,58 +68,19 @@ public class OrderActivity extends AppCompatActivity {
         boolean haschocolate=chocolateChekBox.isChecked();
         Log.v("MainActivity","has whippedcream:"+haschocolate);
 
-        String title = getIntent().getStringExtra("NAMA_MENU");
-
-        int price = calculateprice(haswhippedcream,haschocolate, title);
+        int price = calculateprice(haswhippedcream,haschocolate);
         String pricemessage = createOrderSummary(price,name,haswhippedcream,haschocolate);
 
         displayMessage(pricemessage);
 
     }
-    private int calculateprice(boolean addwhipedcream, boolean addchocolate, String title){
-
-        if(title=="Esspresso"){
-            if(addwhipedcream){
-                harga=37000+1000;
-            }else if (addchocolate){
-                harga=37000+2000;
-            }else {
-                harga = 37000;
-            }
-        }else if(title=="Cappucino"){
-            if(addwhipedcream){
-                harga=42000+1000;
-            }else if (addchocolate){
-                harga=42000+2000;
-            }else {
-                harga = 42000;
-            }
-        }else if(title=="Americano"){
-            if(addwhipedcream){
-                harga=32000+1000;
-            }else if (addchocolate){
-                harga=32000+2000;
-            }else {
-                harga = 32000;
-            }
-        }else if(title=="Frapucino"){
-            if(addwhipedcream){
-                harga=44000+1000;
-            }else if (addchocolate){
-                harga=44000+2000;
-            }else {
-                harga = 44000;
-            }
-        }else if(title=="Latte") {
-            if(addwhipedcream){
-                harga=42000+1000;
-            }else if (addchocolate){
-                harga=42000+2000;
-            }else {
-                harga = 42000;
-            }
+    private int calculateprice(boolean addwhipedcream, boolean addchocolate){
+        if(addwhipedcream){
+            harga=harga+1000;
         }
-
+        if (addchocolate){
+            harga=harga+2000;
+        }
         return quantity * harga;
     }
     private String createOrderSummary(int price, String name, boolean addChocolate, boolean addWhippedCream) {

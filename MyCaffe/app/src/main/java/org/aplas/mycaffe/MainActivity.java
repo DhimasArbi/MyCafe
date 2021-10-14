@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<DataItem> data = new ArrayList<>();
         //Create the ArrayList with the titles and information
         for (int i=0; i<listTitles.length; i++) {
-            data.add(new DataItem(listTitles[i], listColor[i], getId(listIcon[i],R.drawable.class)));
+            data.add(new DataItem(listTitles[i], listInfo[i], listColor[i], getId(listIcon[i],R.drawable.class)));
         }
         return data;
     }

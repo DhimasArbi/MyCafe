@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app =  "http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
@@ -13,10 +14,11 @@
         android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_margin="10dp"
             android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
             app:cardCornerRadius="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +37,7 @@
             android:id="@+id/nmMenu"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="16dp"
             android:gravity="left"
             android:textSize="10pt"
@@ -43,24 +45,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
-        <!--    <TextView-->
-        <!--        android:id="@+id/menuInfo"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_margin="5dp"-->
-        <!--        android:layout_marginTop="20dp"-->
-        <!--        android:layout_marginEnd="108dp"-->
-        <!--        android:background="@color/white"-->
-        <!--        android:text="abcsefghijkl"-->
-        <!--        android:textAlignment="center"-->
-        <!--        android:textColor="@color/colorPrimaryDark"-->
-        <!--        android:textSize="8pt"-->
-        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintHorizontal_bias="0.117"-->
-        <!--        app:layout_constraintStart_toEndOf="@+id/gbMenu"-->
-        <!--        app:layout_constraintTop_toBottomOf="@+id/nmMenu"-->
-        <!--        app:layout_constraintVertical_bias="0.0"></TextView>-->
+        <TextView
+            android:id="@+id/menuInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="22dp"
+            android:background="@color/white"
+            android:text="abcsefghijkl"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="8pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/nmMenu"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
