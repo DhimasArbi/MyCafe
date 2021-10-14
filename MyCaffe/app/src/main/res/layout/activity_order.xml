@@ -26,23 +26,19 @@
             <ImageView
                 android:id="@+id/CoffeeDetailImage"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="290dp"
                 android:layout_marginTop="20dp"
-                android:src=" " />
+                android:src="@drawable/ic_launcher_background" />
 
             <TextView
                 android:id="@+id/coffeenamedetail"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/CoffeeDetailImage"
                 android:layout_centerHorizontal="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp"
-                android:text=""
+                android:text="Coffee Name"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -52,10 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coffeenamedetail"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:text=" " />
+                android:text="Detail" />
 
             <LinearLayout
                 android:id="@+id/linear"
@@ -101,7 +96,7 @@
                 android:textStyle="italic" />
 
             <Button
-                android:id="@+id/order"
+                android:id="@+id/buttonPesan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/orderINFO"
