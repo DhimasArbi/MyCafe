@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
@@ -30,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 TextView itemTitle = (TextView) view.findViewById(R.id.nmMenu);
-                openOrderActivity(itemTitle.getText().toString());
+                TextView itemInfo = (TextView) view.findViewById(R.id.menuInfo);
+                ImageView itemPicture = (ImageView) view.findViewById(R.id.gbMenu);
+                openOrderActivity(itemTitle.getText().toString(), itemInfo.getText().toString());
             }
         });
     }
@@ -68,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    private void openOrderActivity(String title) {
+    private void openOrderActivity(String title, String info) {
         Intent media = new Intent(getApplicationContext(), OrderActivity.class);
         media.putExtra("NAMA_MENU", title);
+        media.putExtra("MENU_INFO", info);
         startActivity(media);
     }
 }

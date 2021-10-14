@@ -35,6 +35,10 @@ public class OrderActivity extends AppCompatActivity {
         krim = (CheckBox) findViewById(R.id.tbhkrim);
         cokelat = (CheckBox) findViewById(R.id.tbhCoklat);
         priceTextView = (TextView) findViewById(R.id.price_textview);
+        TextView nmMenu = (TextView) findViewById(R.id.nmMenu);
+        TextView descMenu = (TextView) findViewById(R.id.menuInfo);
+        nmMenu.setText(getIntent().getStringExtra("NAMA_MENU"));
+        descMenu.setText(getIntent().getStringExtra("MENU_INFO"));
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,9 +123,11 @@ public class OrderActivity extends AppCompatActivity {
         return harga;
     }
     private String createOrderSummary(int price, String name, boolean addChocolate, boolean addWhippedCream) {
+        String a = (addWhippedCream==true)?"Ya":"Tidak";
+        String b = (addChocolate==true)?"Ya":"Tidak";
         String pricemessage=" Nama = "+name;
-        pricemessage+="\n Tambahkan Coklat = " +addWhippedCream;
-        pricemessage+="\n Tambahkan Krim = " +addChocolate;
+        pricemessage+="\n Tambahkan Coklat = " + a;
+        pricemessage+="\n Tambahkan Krim = " +b;
         pricemessage+="\n Jumlah Pemesanan = " +quantity;
         pricemessage+="\n Total = Rp " +price;
         return  pricemessage;

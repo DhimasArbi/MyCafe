@@ -25,7 +25,10 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:scaleType="centerCrop"></ImageView>
 
             <TextView
@@ -45,11 +48,11 @@
                 android:id="@+id/menuInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/gbMenu"
                 android:layout_below="@id/nmMenu"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/gbMenu"
                 android:textColor="@color/Black"></TextView>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
