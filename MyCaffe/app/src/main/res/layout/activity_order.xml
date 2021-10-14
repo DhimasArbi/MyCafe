@@ -1,134 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrderActivity"
-    android:padding="20dp"
-    android:orientation="vertical">
-
-    <EditText
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Masukan nama anda ...."
-        android:id="@+id/edt_name"
-        android:inputType="text">
-    </EditText>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tambahkan Topping"
-        android:textSize="8pt"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="56dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"></TextView>
-
-    <CheckBox
-        android:id="@+id/WhippedCream_checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:text="Krim"
-        android:textSize="7pt"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="143dp">
-    </CheckBox>
-
-    <CheckBox
-        android:id="@+id/Chocolate_checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:text="Coklat"
-        android:textSize="7pt"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="92dp">
-    </CheckBox>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Jumlah"
-        android:textSize="8pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
-        android:layout_marginTop="20dp"></TextView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="250dp">
-
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:text="-"
-            android:onClick="decrement">
-        </Button>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp"
+        tools:context=".MainActivity">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Masukan nama anda ...."
+            android:id="@+id/edt_name"
+            android:inputType="text"/>
         <TextView
-            android:id="@+id/quantity_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
+            android:text="Tambahkan Topping"
+            android:textSize="25dp"/>
+        <CheckBox
+            android:id="@+id/WhippedCream_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Krim"
+            android:paddingLeft="16dp"
+            android:textSize="15sp"/>
+        <CheckBox
+            android:id="@+id/Chocolate_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coklat"
+            android:paddingLeft="16dp"
+            android:textSize="15sp"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jumlah"
+            android:textSize="25dp"
+            android:textAllCaps="true"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="48dp"
+                android:onClick="increment"
+                android:text="+"
+
+                android:layout_height="48dp" />
+            <TextView
+                android:textColor="#212121"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:id="@+id/quantity_textview"
+                android:textSize="25dp"/>
+            <Button
+                android:layout_width="48dp"
+                android:onClick="decrement"
+                android:text="-"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga"
+            android:textSize="30dp"
+            android:textAllCaps="true"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="0"
             android:textColor="#212121"
-            android:textSize="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginLeft="25dp">
-        </TextView>
-
+            android:id="@+id/price_textview"
+            android:textSize="25dp"/>
         <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:text="+"
-            android:onClick="increment">
-        </Button>
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="Submitorder"
+            android:layout_height="wrap_content"
+            android:text="Pesan Sekarang"/>
+
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Harga"
-        android:textSize="8pt"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="310dp"
-        android:layout_marginTop="20dp">
-    </TextView>
-
-    <TextView
-        android:id="@+id/price_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="#212121"
-        android:textSize="25dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="355dp"
-        android:layout_marginTop="10dp">
-    </TextView>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Pesan Sekarang"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="409dp"
-        android:onClick="Submitorder"></Button>
-
-
-</LinearLayout>
+</ScrollView>
