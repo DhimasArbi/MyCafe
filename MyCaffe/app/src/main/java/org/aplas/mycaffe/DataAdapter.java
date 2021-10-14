@@ -76,7 +76,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>imp
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.nmMenu);
-//            info = (TextView) itemView.findViewById(R.id.menuInfo);
+            info = (TextView) itemView.findViewById(R.id.menuInfo);
             icon = (ImageView) itemView.findViewById(R.id.gbMenu);
             rowView = itemView;
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +94,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>imp
         public void bindTo(DataItem currData){
             title.setText(currData.getTitle());
 //            title.setBackgroundColor(currData.getColor());
-//            info.setText(currData.getInfo());
+            info.setText(currData.getInfo());
             icon.setBackgroundResource(currData.getIcon());
         }
     }
