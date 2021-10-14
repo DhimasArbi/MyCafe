@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,7 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 TextView itemTitle = (TextView) view.findViewById(R.id.nmMenu);
                 TextView itemInfo = (TextView) view.findViewById(R.id.menuInfo);
                 ImageView itemPicture = (ImageView) view.findViewById(R.id.gbMenu);
-                openOrderActivity(itemTitle.getText().toString(), itemInfo.getText().toString());
+
+                Intent media = new Intent(getApplicationContext(), OrderActivity.class);
+                media.putExtra("NAMA_MENU", itemTitle.getText().toString());
+//                media.putExtra("MENU_INFO", itemInfo.getText().toString());
+                media.putExtra("GAMBAR", (Parcelable) itemPicture.getDrawable());
+                startActivity(media);
             }
         });
     }

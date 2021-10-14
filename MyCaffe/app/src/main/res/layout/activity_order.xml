@@ -38,25 +38,24 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
-                android:text="Coffee Name"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/coffeedetaildetail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/coffeenamedetail"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="Detail" />
+<!--            <TextView-->
+<!--                android:id="@+id/coffeedetaildetail"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/coffeenamedetail"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:text="Detail" />-->
 
             <LinearLayout
                 android:id="@+id/linear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/coffeedetaildetail"
+                android:layout_below="@id/coffeenamedetail"
                 android:layout_centerHorizontal="true"
                 android:orientation="horizontal">
 
@@ -90,7 +89,7 @@
                 android:layout_below="@+id/linear"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Total is "
+                android:text="Rp. 0"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="italic" />

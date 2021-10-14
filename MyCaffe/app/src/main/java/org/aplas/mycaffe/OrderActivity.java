@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,9 +18,9 @@ import java.text.NumberFormat;
 public class OrderActivity extends AppCompatActivity {
 
     private EditText edtName;
-    private CheckBox krim, cokelat;
     private TextView priceTextView, quantityTextView;
     private Button inc,dec, pesan;
+    private ImageView gbOrder;
     private int quantity = 0, harga = 0;
     private static int hrgAmericano = 32000, hrgCappucino = 42000,
             hrgEsspresso= 42000, hrgFrapucino = 44000, hrgLatte = 42000;
@@ -31,14 +32,26 @@ public class OrderActivity extends AppCompatActivity {
         inc = (Button) findViewById(R.id.buttonTambah);
         dec = (Button) findViewById(R.id.buttonKurang);
         pesan = (Button) findViewById(R.id.buttonPesan);
-        edtName = (EditText)findViewById(R.id.edt_name);
-        krim = (CheckBox) findViewById(R.id.tbhkrim);
-        cokelat = (CheckBox) findViewById(R.id.tbhCoklat);
+//        edtName = (EditText)findViewById(R.id.edt_name);
         priceTextView = (TextView) findViewById(R.id.orderINFO);
-        TextView nmMenu = (TextView) findViewById(R.id.nmMenu);
-        TextView descMenu = (TextView) findViewById(R.id.menuInfo);
-        nmMenu.setText(getIntent().getStringExtra("NAMA_MENU"));
-        descMenu.setText(getIntent().getStringExtra("MENU_INFO"));
+        TextView nmMenu = (TextView) findViewById(R.id.coffeenamedetail);
+//        TextView descMenu = (TextView) findViewById(R.id.coffeedetaildetail);
+        gbOrder = (ImageView) findViewById(R.id.CoffeeDetailImage);
+
+        String nmCoffe = getIntent().getStringExtra("NAMA_MENU");
+        nmMenu.setText(nmCoffe);
+        if(nmCoffe.equalsIgnoreCase("Esspresso")){
+            gbOrder.setImageResource(R.drawable.espresso);
+        }else if(nmCoffe.equalsIgnoreCase("Cappucino")){
+            gbOrder.setImageResource(R.drawable.capucino);
+        }else if(nmCoffe.equalsIgnoreCase("Americano")){
+            gbOrder.setImageResource(R.drawable.americano);
+        }else if(nmCoffe.equalsIgnoreCase("Frapucino")){
+            gbOrder.setImageResource(R.drawable.frapuccino);
+        }else if (nmCoffe.equalsIgnoreCase("Latte")){
+            gbOrder.setImageResource(R.drawable.latte);
+        }
+//        descMenu.setText(getIntent().getStringExtra("MENU_INFO"));
 
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +60,7 @@ public class OrderActivity extends AppCompatActivity {
                     Toast.makeText(OrderActivity.this,"pesanan minimal 1", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                quantity = quantity -1;
+                quantity = quantity - 1;
                 display(quantity);
             }
         });
@@ -58,7 +71,7 @@ public class OrderActivity extends AppCompatActivity {
                     Toast.makeText(OrderActivity.this,"Pesanan maximal 10",Toast.LENGTH_SHORT).show();
                     return;
                 }
-                quantity = quantity+1 ;
+                quantity = quantity + 1 ;
                 display(quantity);
             }
         });
@@ -67,70 +80,25 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String title = getIntent().getStringExtra("NAMA_MENU");
-                String name = edtName.getText().toString();
-                boolean haswhippedcream = krim.isChecked();
-                boolean haschocolate = cokelat.isChecked();
-
-                setHarga(title,haswhippedcream, haschocolate);
-                int price = harga * quantity;
-                String pricemessage = createOrderSummary(price,name,haswhippedcream,haschocolate);
-
-                displayMessage(pricemessage);
+//                String name = edtName.getText().toString();
+                String pricemessage = "Rp " +hitungHarga(title);
+                priceTextView.setText(pricemessage);
             }
         });
     }
-
-    private  int setHarga(String title, Boolean tbhKrim, Boolean tbhCoklat){
-        if(tbhKrim){
-            if(title=="Esspresso"){
-                harga=hrgEsspresso+1000;
-            }else if(title=="Cappucino"){
-                harga = hrgCappucino+1000;
-            }else if(title=="Americano"){
-                harga = hrgAmericano+1000;
-            }else if(title=="Frapucino"){
-                harga = hrgFrapucino+1000;
-            }else{
-                harga = hrgLatte+1000;
-            }
+    private int hitungHarga(String title){
+        if(title.equalsIgnoreCase("Esspresso")){
+            harga=hrgEsspresso;
+        }else if(title.equalsIgnoreCase("Cappucino")){
+            harga = hrgCappucino;
+        }else if(title.equalsIgnoreCase("Americano")){
+            harga = hrgAmericano;
+        }else if(title.equalsIgnoreCase("Frapucino")){
+            harga = hrgFrapucino;
+        }else if (title.equalsIgnoreCase("Latte")){
+            harga = hrgLatte;
         }
-        if (tbhCoklat){
-            if(title=="Esspresso"){
-                harga=hrgEsspresso+2000;
-            }else if(title=="Cappucino"){
-                harga = hrgCappucino+2000;
-            }else if(title=="Americano"){
-                harga = hrgAmericano+2000;
-            }else if(title=="Frapucino"){
-                harga = hrgFrapucino+2000;
-            }else{
-                harga = hrgLatte+2000;
-            }
-        }
-        if (!tbhCoklat && !tbhKrim){
-            if(title=="Esspresso"){
-                harga=hrgEsspresso;
-            }else if(title=="Cappucino"){
-                harga = hrgCappucino;
-            }else if(title=="Americano"){
-                harga = hrgAmericano;
-            }else if(title=="Frapucino"){
-                harga = hrgFrapucino;
-            }else{
-                harga = hrgLatte;
-            }
-        }
-        return harga;
-    }
-    private String createOrderSummary(int price, String name, boolean addChocolate, boolean addWhippedCream) {
-        String a = (addWhippedCream==true)?"Ya":"Tidak";
-        String b = (addChocolate==true)?"Ya":"Tidak";
-        String pricemessage=" Nama = "+name;
-        pricemessage+="\n Tambahkan Coklat = " + a;
-        pricemessage+="\n Tambahkan Krim = " +b;
-        pricemessage+="\n Jumlah Pemesanan = " +quantity;
-        pricemessage+="\n Total = Rp " +price;
-        return  pricemessage;
+        return harga * quantity;
     }
 
     private void displayMessage(String message) {

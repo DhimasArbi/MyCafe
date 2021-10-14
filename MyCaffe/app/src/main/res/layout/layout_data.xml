@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app =  "http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/colorAccent"
     android:layout_margin="5dp"
     android:id="@+id/layoutData"
     android:padding="10dp">
@@ -20,6 +18,15 @@
             android:layout_height="wrap_content"
             android:padding="12dp">
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardGB"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
             <ImageView
                 android:id="@+id/gbMenu"
                 android:layout_width="100dp"
@@ -30,7 +37,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:scaleType="centerCrop"></ImageView>
-
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/nmMenu"
                 android:layout_width="wrap_content"
@@ -41,7 +48,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/Black"
-                android:layout_toRightOf="@id/gbMenu"
+                android:layout_toRightOf="@id/cardGB"
                 android:layout_marginLeft="15dp"></TextView>
 
             <TextView
@@ -52,7 +59,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_toRightOf="@id/gbMenu"
+                android:layout_toRightOf="@id/cardGB"
                 android:textColor="@color/Black"></TextView>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
