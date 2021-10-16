@@ -80,12 +80,12 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String title = getIntent().getStringExtra("NAMA_MENU");
-//                String name = edtName.getText().toString();
-                String pricemessage = "Rp " +hitungHarga(title);
-                priceTextView.setText(pricemessage);
+                openDisplayActivity(title, quantity, hitungHarga(title),hitungHarga(title)/quantity);
             }
         });
     }
+
+    
     private int hitungHarga(String title){
         if(title.equalsIgnoreCase("Esspresso")){
             harga=hrgEsspresso;
@@ -101,16 +101,19 @@ public class OrderActivity extends AppCompatActivity {
         return harga * quantity;
     }
 
-    private void displayMessage(String message) {
-        priceTextView = (TextView) findViewById(R.id.orderINFO);
-        priceTextView.setText(message);
-    }
     private void display(int number) {
         quantityTextView = (TextView) findViewById(R.id.quantity);
+        String title = getIntent().getStringExtra("NAMA_MENU");
+        String pricemessage = "Rp " +hitungHarga(title);
+        priceTextView.setText(pricemessage);
         quantityTextView.setText("" + number);
     }
-    private void displayPrice(int number) {
-        priceTextView = (TextView) findViewById(R.id.orderINFO);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    private void openDisplayActivity(String title, int quantity, int harga, int hrgItem) {
+        Intent media = new Intent(getApplicationContext(), DisplayActivity.class);
+        media.putExtra("NAMA_MENU", title);
+        media.putExtra("QUANTITY", quantity);
+        media.putExtra("HARGATOTAL", harga);
+        media.putExtra("HARGAITEM", hrgItem);
+        startActivity(media);
     }
 }

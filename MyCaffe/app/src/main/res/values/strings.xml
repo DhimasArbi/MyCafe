@@ -9,11 +9,16 @@
         <item>Latte</item>
     </string-array>
     <string-array name="caffe_info">
-        <item>Americano Enak</item>
-        <item>Capucino Mantap</item>
-        <item>Espresso Sedap</item>
-        <item>Frapucino Good</item>
-        <item>Latte Best</item>
+        <item>Terdapat 15 kalori dalam 1 grande (473 ml).
+Rincian Kalori: 0% lemak, 0% karbohidrat, 0% protein.</item>
+        <item>Terdapat 56 kalori dalam Cappuccino (1 cangkir kopi).
+Rincian Kalori: 48% lemak, 31% karbohidrat, 22% protein.</item>
+        <item>Terdapat 4 kalori dalam Kopi Espresso (1 cangkir kopi).
+Rincian Kalori: 77% lemak, 0% karbohidrat, 23% protein.</item>
+        <item>Terdapat 460 kalori dalam 1 porsi (472 ml).
+Rincian Kalori: 37% lemak, 57% karbohidrat, 6% protein.</item>
+        <item>Terdapat 135 kalori dalam Kopi Latte (1 sedang).
+Rincian Kalori: 37% lemak, 37% karbohidrat, 26% protein.</item>
     </string-array>
     <string-array name="caffe_icon">
         <item>americano</item>

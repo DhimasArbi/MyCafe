@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCaffe">
         <activity
+            android:name=".DisplayActivity"
+            android:exported="false" />
+        <activity
             android:name=".OrderActivity"
             android:exported="true" />
         <activity

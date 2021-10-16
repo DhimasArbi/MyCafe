@@ -21,7 +21,7 @@
 
         <RelativeLayout
             android:layout_width="350dp"
-            android:layout_height="700dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/coffeetitle"
@@ -45,14 +45,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coffeetitle"
-                android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:paddingTop="1dp"
                 android:paddingBottom="10dp"
-                android:text="Pesanan "
+                android:text="Pesanan"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -61,14 +60,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coffeenamedetail"
-                android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:paddingTop="2dp"
                 android:paddingBottom="2dp"
-                android:text="Total item "
+                android:text="Total item"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/hargaItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coffeetotalitem"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="Harga"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -76,8 +89,7 @@
                 android:id="@+id/coffeetotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/coffeetotalitem"
-                android:layout_centerHorizontal="true"
+                android:layout_below="@id/hargaItem"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"

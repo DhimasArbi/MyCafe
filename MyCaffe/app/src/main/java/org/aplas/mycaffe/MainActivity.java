@@ -37,11 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView itemInfo = (TextView) view.findViewById(R.id.menuInfo);
                 ImageView itemPicture = (ImageView) view.findViewById(R.id.gbMenu);
 
-                Intent media = new Intent(getApplicationContext(), OrderActivity.class);
-                media.putExtra("NAMA_MENU", itemTitle.getText().toString());
-//                media.putExtra("MENU_INFO", itemInfo.getText().toString());
-                media.putExtra("GAMBAR", (Parcelable) itemPicture.getDrawable());
-                startActivity(media);
+                openOrderActivity(itemTitle.getText().toString());
             }
         });
     }
@@ -79,10 +75,9 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    private void openOrderActivity(String title, String info) {
+    private void openOrderActivity(String title) {
         Intent media = new Intent(getApplicationContext(), OrderActivity.class);
         media.putExtra("NAMA_MENU", title);
-        media.putExtra("MENU_INFO", info);
         startActivity(media);
     }
 }
