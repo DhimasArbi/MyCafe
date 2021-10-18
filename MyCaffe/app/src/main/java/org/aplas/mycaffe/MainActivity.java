@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 TextView itemTitle = (TextView) view.findViewById(R.id.nmMenu);
-                TextView itemInfo = (TextView) view.findViewById(R.id.menuInfo);
-                ImageView itemPicture = (ImageView) view.findViewById(R.id.gbMenu);
 
                 openOrderActivity(itemTitle.getText().toString());
             }

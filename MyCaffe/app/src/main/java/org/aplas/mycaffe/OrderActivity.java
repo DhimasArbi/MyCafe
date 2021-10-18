@@ -32,23 +32,20 @@ public class OrderActivity extends AppCompatActivity {
         inc = (Button) findViewById(R.id.buttonTambah);
         dec = (Button) findViewById(R.id.buttonKurang);
         pesan = (Button) findViewById(R.id.buttonPesan);
-//        edtName = (EditText)findViewById(R.id.edt_name);
         priceTextView = (TextView) findViewById(R.id.orderINFO);
         TextView nmMenu = (TextView) findViewById(R.id.coffeenamedetail);
-//        TextView descMenu = (TextView) findViewById(R.id.coffeedetaildetail);
         gbOrder = (ImageView) findViewById(R.id.CoffeeDetailImage);
 
-        String nmCoffe = getIntent().getStringExtra("NAMA_MENU");
-        nmMenu.setText(nmCoffe);
-        if(nmCoffe.equalsIgnoreCase("Esspresso")){
+        nmMenu.setText(getIntent().getStringExtra("NAMA_MENU"));
+        if(getIntent().getStringExtra("NAMA_MENU").equalsIgnoreCase("Esspresso")){
             gbOrder.setImageResource(R.drawable.espresso);
-        }else if(nmCoffe.equalsIgnoreCase("Cappucino")){
+        }else if(getIntent().getStringExtra("NAMA_MENU").equalsIgnoreCase("Cappucino")){
             gbOrder.setImageResource(R.drawable.capucino);
-        }else if(nmCoffe.equalsIgnoreCase("Americano")){
+        }else if(getIntent().getStringExtra("NAMA_MENU").equalsIgnoreCase("Americano")){
             gbOrder.setImageResource(R.drawable.americano);
-        }else if(nmCoffe.equalsIgnoreCase("Frapucino")){
+        }else if(getIntent().getStringExtra("NAMA_MENU").equalsIgnoreCase("Frapucino")){
             gbOrder.setImageResource(R.drawable.frapuccino);
-        }else if (nmCoffe.equalsIgnoreCase("Latte")){
+        }else if (getIntent().getStringExtra("NAMA_MENU").equalsIgnoreCase("Latte")){
             gbOrder.setImageResource(R.drawable.latte);
         }
 //        descMenu.setText(getIntent().getStringExtra("MENU_INFO"));
@@ -56,20 +53,26 @@ public class OrderActivity extends AppCompatActivity {
         dec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                inc.setEnabled(true);
                 if (quantity==1){
-                    Toast.makeText(OrderActivity.this,"pesanan minimal 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OrderActivity.this,"Pesanan minimal 1", Toast.LENGTH_SHORT).show();
+                    dec.setEnabled(false);
                     return;
                 }
                 quantity = quantity - 1;
                 display(quantity);
             }
         });
+
         inc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(quantity==10){
                     Toast.makeText(OrderActivity.this,"Pesanan maximal 10",Toast.LENGTH_SHORT).show();
+                    inc.setEnabled(false);
                     return;
+                }else if (quantity>=1){
+                    dec.setEnabled(true);
                 }
                 quantity = quantity + 1 ;
                 display(quantity);
@@ -85,7 +88,7 @@ public class OrderActivity extends AppCompatActivity {
         });
     }
 
-    
+
     private int hitungHarga(String title){
         if(title.equalsIgnoreCase("Esspresso")){
             harga=hrgEsspresso;
