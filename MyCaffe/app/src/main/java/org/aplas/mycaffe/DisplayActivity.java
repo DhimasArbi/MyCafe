@@ -10,26 +10,24 @@ import android.widget.TextView;
 
 public class DisplayActivity extends AppCompatActivity {
 
-    Button homeBtn;
+    private Button homeBtn;
+    private TextView coffeenamedetail, coffeetotalitem, coffeetotal, hargaItem, nama;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        TextView coffeenamedetail = (TextView) findViewById(R.id.coffeenamedetail);
-        TextView coffeetotalitem = (TextView) findViewById(R.id.coffeetotalitem);
-        TextView coffeetotal = (TextView) findViewById(R.id.coffeetotal);
-        TextView hargaItem = (TextView) findViewById(R.id.hargaItem);
+        coffeenamedetail = (TextView) findViewById(R.id.coffeenamedetail);
+        coffeetotalitem = (TextView) findViewById(R.id.coffeetotalitem);
+        coffeetotal = (TextView) findViewById(R.id.coffeetotal);
+        hargaItem = (TextView) findViewById(R.id.hargaItem);
+        nama = (TextView) findViewById(R.id.nama);
         homeBtn = (Button) findViewById(R.id.homeBtn);
 
-        String title = getIntent().getStringExtra("NAMA_MENU");
-        int q = getIntent().getIntExtra("QUANTITY",0);
-        int h = getIntent().getIntExtra("HARGATOTAL",0);
-        int hi = getIntent().getIntExtra("HARGAITEM",0);
-
-        coffeenamedetail.setText("Pesanan\t\t\t\t"+title);
-        coffeetotalitem.setText("Total item\t\t\t"+q);
-        hargaItem.setText("Harga\t\t\t\t\t\t\tRp "+hi);
-        coffeetotal.setText("Total\t\t\t\t\t\t\t\tRp "+h);
+        nama.setText("Nama\t\t\t\t\t\t\t\t"+getIntent().getStringExtra("NAMA"));
+        coffeenamedetail.setText("Pesanan\t\t\t\t\t"+getIntent().getStringExtra("NAMA_MENU"));
+        coffeetotalitem.setText("Total item\t\t\t"+getIntent().getIntExtra("QUANTITY",0));
+        hargaItem.setText("Harga\t\t\t\t\t\t\t\tRp "+getIntent().getIntExtra("HARGAITEM",0));
+        coffeetotal.setText("Total\t\t\t\t\t\t\t\t\tRp "+getIntent().getIntExtra("HARGATOTAL",0));
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

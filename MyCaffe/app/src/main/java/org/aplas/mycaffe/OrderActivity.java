@@ -34,6 +34,7 @@ public class OrderActivity extends AppCompatActivity {
         pesan = (Button) findViewById(R.id.buttonPesan);
         priceTextView = (TextView) findViewById(R.id.orderINFO);
         TextView nmMenu = (TextView) findViewById(R.id.coffeenamedetail);
+        edtName = (EditText) findViewById(R.id.edtNama);
         gbOrder = (ImageView) findViewById(R.id.CoffeeDetailImage);
 
         nmMenu.setText(getIntent().getStringExtra("NAMA_MENU"));
@@ -83,7 +84,7 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String title = getIntent().getStringExtra("NAMA_MENU");
-                openDisplayActivity(title, quantity, hitungHarga(title),hitungHarga(title)/quantity);
+                openDisplayActivity(title, quantity, hitungHarga(title),hitungHarga(title)/quantity, edtName.getText().toString());
             }
         });
     }
@@ -111,12 +112,13 @@ public class OrderActivity extends AppCompatActivity {
         priceTextView.setText(pricemessage);
         quantityTextView.setText("" + number);
     }
-    private void openDisplayActivity(String title, int quantity, int harga, int hrgItem) {
+    private void openDisplayActivity(String title, int quantity, int harga, int hrgItem, String nama) {
         Intent media = new Intent(getApplicationContext(), DisplayActivity.class);
         media.putExtra("NAMA_MENU", title);
         media.putExtra("QUANTITY", quantity);
         media.putExtra("HARGATOTAL", harga);
         media.putExtra("HARGAITEM", hrgItem);
+        media.putExtra("NAMA", nama);
         startActivity(media);
     }
 }
