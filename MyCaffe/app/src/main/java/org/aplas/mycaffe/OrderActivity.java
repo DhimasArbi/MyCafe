@@ -84,6 +84,13 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String title = getIntent().getStringExtra("NAMA_MENU");
+                if (edtName.getText().toString().isEmpty()) {
+                    Toast.makeText(OrderActivity.this, "Masukkan nama", Toast.LENGTH_LONG).show();
+                    return;
+                }else if (quantity == 0) {
+                    Toast.makeText(OrderActivity.this, "Silahkan tambah jumlah pesanan", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 openDisplayActivity(title, quantity, hitungHarga(title),hitungHarga(title)/quantity, edtName.getText().toString());
             }
         });
