@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/coffeeListFragment">
+    <fragment
+        android:id="@+id/coffeeListFragment"
+        android:name="org.aplas.sanasinicoffee.CoffeeListFragment"
+        android:label="fragment_coffee_list"
+        tools:layout="@layout/fragment_coffee_list" >
+        <action
+            android:id="@+id/action_coffeeListFragment_to_coffeeDetailFragment"
+            app:destination="@id/coffeeDetailFragment" />
+        <action
+            android:id="@+id/action_coffeeListFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <argument
+            android:name="jumlah"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/coffeeDetailFragment"
+        android:name="org.aplas.sanasinicoffee.CoffeeDetailFragment"
+        android:label="fragment_coffee_detail"
+        tools:layout="@layout/fragment_coffee_detail" >
+        <action
+            android:id="@+id/action_coffeeDetailFragment_to_coffeeListFragment"
+            app:destination="@id/coffeeListFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="nama"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="deskripsi"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="gambar"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="harga"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="org.aplas.sanasinicoffee.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_coffeeListFragment"
+            app:destination="@id/coffeeListFragment" />
+    </fragment>
+</navigation>
