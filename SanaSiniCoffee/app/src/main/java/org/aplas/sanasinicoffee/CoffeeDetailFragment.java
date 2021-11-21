@@ -75,7 +75,7 @@ public class CoffeeDetailFragment extends Fragment {
         harga = CoffeeDetailFragmentArgs.fromBundle(getArguments()).getHarga();
 
         Glide.with(view.getContext()).load(gambarkopi).into(gambar);
-        nama.setText(namakopi + " Rp " + harga);
+        nama.setText(namakopi);
         deskripsi.setText(deskripsikopi);
 
         firebaseFirestore.collection("Coffee").document(coffeeid).addSnapshotListener(new EventListener<DocumentSnapshot>() {
@@ -84,7 +84,7 @@ public class CoffeeDetailFragment extends Fragment {
                 CoffeeModel coffeeModel = value.toObject(CoffeeModel.class);
                 jumlah = coffeeModel.getJumlah();
                 quantity.setText(String.valueOf(jumlah));
-                orderInfo.setText("Total harga: Rp " + harga * jumlah);
+                orderInfo.setText("Rp " + harga * jumlah);
             }
         });
 
@@ -98,7 +98,7 @@ public class CoffeeDetailFragment extends Fragment {
                     quantity.setText(String.valueOf(jumlah));
 
                     totalHarga = harga * jumlah;
-                    orderInfo.setText("Total harga: Rp " + totalHarga);
+                    orderInfo.setText("Rp " + totalHarga);
 
                     firebaseFirestore.collection("Coffee").document(coffeeid).update("jumlah", jumlah).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -123,7 +123,7 @@ public class CoffeeDetailFragment extends Fragment {
                     quantity.setText(String.valueOf(jumlah));
 
                     totalHarga = harga * jumlah;
-                    orderInfo.setText("Total harga: Rp " + totalHarga);
+                    orderInfo.setText("Rp " + totalHarga);
 
                     firebaseFirestore.collection("Coffee").document(coffeeid).update("jumlah", jumlah).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
