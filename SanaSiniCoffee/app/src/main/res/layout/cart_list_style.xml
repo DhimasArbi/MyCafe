@@ -40,17 +40,32 @@
 
 
             <TextView
-                android:id="@+id/orderdetail"
-                android:layout_width="match_parent"
+                android:id="@+id/orderdetailquantity"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cartcoffeename"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="8dp"
                 android:layout_toRightOf="@id/cartImage"
-                android:text="Total Price x Quantity"
+                android:text="Quantity"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/orderdetailprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cartcoffeename"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:text="Total price"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

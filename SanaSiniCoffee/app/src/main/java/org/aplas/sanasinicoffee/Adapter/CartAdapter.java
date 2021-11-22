@@ -29,9 +29,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder> {
     @Override
     public void onBindViewHolder(CartHolder holder, int position) {
         Glide.with(holder.itemView.getContext()).load(cartModelList.get(position).getGambar()).into(holder.gambar);
-        holder.harga.setText("Total " + cartModelList.get(position).getJumlah()
-                + " untuk Rp " + cartModelList.get(position).getTotalHarga());
-
+        holder.jumlahitem.setText("x" + cartModelList.get(position).getJumlah());
+        holder.harga.setText("Rp "+cartModelList.get(position).getTotalHarga());
         holder.nama.setText(cartModelList.get(position).getNama());
     }
 
@@ -45,15 +44,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder> {
 
     class CartHolder extends ViewHolder{
 
-        TextView nama, harga;
+        TextView nama, harga, jumlahitem;
         ImageView gambar;
 
         public CartHolder(View itemView) {
             super(itemView);
 
             nama = itemView.findViewById(R.id.cartcoffeename);
-            harga = itemView.findViewById(R.id.orderdetail);
+            harga = itemView.findViewById(R.id.orderdetailprice);
             gambar = itemView.findViewById(R.id.cartImage);
+            jumlahitem = itemView.findViewById(R.id.orderdetailquantity);
         }
     }
 }

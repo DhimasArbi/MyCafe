@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
@@ -53,6 +54,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.CoffeListH
 
         TextView nama, deskripsi;
         ImageView gambar;
+        CardView container;
 
         public CoffeListHolder(View itemView) {
             super(itemView);
@@ -60,10 +62,12 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.CoffeListH
             nama = itemView.findViewById(R.id.coffeeName);
             deskripsi = itemView.findViewById(R.id.coffeedetail);
             gambar = itemView.findViewById(R.id.coffeeImage);
+            container = itemView.findViewById(R.id.cardcoffeelist);
 
             nama.setOnClickListener(this);
             deskripsi.setOnClickListener(this);
             gambar.setOnClickListener(this);
+            container.setOnClickListener(this);
         }
 
         @Override

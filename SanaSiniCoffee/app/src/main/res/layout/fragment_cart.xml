@@ -10,10 +10,11 @@
         android:id="@+id/cartRecView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/orderSummary"
+        android:layout_above="@id/rl1"
         android:padding="10dp" />
 
     <RelativeLayout
+        android:id="@+id/rl1"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,7 +35,9 @@
                 android:text="Total harga"
                 android:textColor="@color/summarytext"
                 android:textSize="18sp"
-                android:textStyle="normal"></TextView>
+                android:textStyle="normal">
+            </TextView>
+
             <TextView
                 android:id="@+id/orderSummary"
                 android:layout_width="wrap_content"
@@ -51,18 +55,16 @@
 
         <Button
             android:id="@+id/orderNow"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="right"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="11dp"
             android:background="@drawable/round_btn"
             android:drawableLeft="@drawable/cartwhite"
             android:text="ORDER NOW"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"></Button>
     </RelativeLayout>
-
-
 </RelativeLayout>
