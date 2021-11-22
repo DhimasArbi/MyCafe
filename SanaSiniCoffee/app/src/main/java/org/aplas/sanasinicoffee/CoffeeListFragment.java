@@ -74,24 +74,28 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
 
         jumlah = CoffeeListFragmentArgs.fromBundle(getArguments()).getJumlah();
 
-        firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (DocumentSnapshot ds: task.getResult().getDocuments()) {
-                        CartModel cartModel = ds.toObject(CartModel.class);
-                        int initialquantity = cartModel.getJumlah();
-                        savequantity.add(initialquantity);
+        if (jumlah==0){
+            jumlahCart.setText("0");
+        }else {
+            firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        for (DocumentSnapshot ds: task.getResult().getDocuments()) {
+                            CartModel cartModel = ds.toObject(CartModel.class);
+                            int initialquantity = cartModel.getJumlah();
+                            savequantity.add(initialquantity);
+                        }
+                        for (int i =0; i < savequantity.size(); i++) {
+                            jumlahsum+= Integer.parseInt(String.valueOf(savequantity.get(i)));
+                        }
+                        jumlahCart.setText(String.valueOf(jumlahsum));
+                        jumlahsum = 0;
+                        savequantity.clear(); // unless we add something new to our list// previous records are cleared.
                     }
-                    for (int i =0; i < savequantity.size(); i++) {
-                        jumlahsum+= Integer.parseInt(String.valueOf(savequantity.get(i)));
-                    }
-                    jumlahCart.setText(String.valueOf(jumlahsum));
-                    jumlahsum = 0;
-                    savequantity.clear(); // unless we add something new to our list// previous records are cleared.
                 }
-            }
-        });
+            });
+        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

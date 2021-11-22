@@ -151,19 +151,29 @@ public class CoffeeDetailFragment extends Fragment {
         hashMap.put("coffeeid", coffeeid);
         hashMap.put("gambar", gambarkopi);
 
-        firebaseFirestore.collection("Cart").document(namakopi).set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(Task<Void> task) {
+        if (jumlah == 0) {
+            Toast.makeText(getContext(), "Minimal Order: 1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Menu tidak ditambahkan ke cart", Toast.LENGTH_SHORT).show();
+            CoffeeDetailFragmentDirections.ActionCoffeeDetailFragmentToCoffeeListFragment
+                    action = CoffeeDetailFragmentDirections.actionCoffeeDetailFragmentToCoffeeListFragment();
+            action.setJumlah(jumlah);
+            navController.navigate(action);
+        } else {
+            firebaseFirestore.collection("Cart").document(namakopi).set(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(Task<Void> task) {
 
-                if (task.isSuccessful()) {
-                    Toast.makeText(getContext(), "Ditambahkan ke Keranjang", Toast.LENGTH_SHORT).show();
-                    CoffeeDetailFragmentDirections.ActionCoffeeDetailFragmentToCoffeeListFragment
-                            action = CoffeeDetailFragmentDirections.actionCoffeeDetailFragmentToCoffeeListFragment();
-                    action.setJumlah(jumlah);
-                    navController.navigate(action);
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getContext(), "Ditambahkan ke Cart", Toast.LENGTH_SHORT).show();
+
+                        CoffeeDetailFragmentDirections.ActionCoffeeDetailFragmentToCoffeeListFragment
+                                action = CoffeeDetailFragmentDirections.actionCoffeeDetailFragmentToCoffeeListFragment();
+                        action.setJumlah(jumlah);
+                        navController.navigate(action);
+                    }
                 }
-            }
-        });
+            });
+        }
 
     }
 
