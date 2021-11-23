@@ -36,7 +36,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.CoffeListH
     @Override
     public void onBindViewHolder(CoffeListHolder holder, int position) {
         holder.nama.setText(coffeeModelList.get(position).getNama());
-        holder.deskripsi.setText(coffeeModelList.get(position).getDeskripsi());
+//        holder.deskripsi.setText(coffeeModelList.get(position).getDeskripsi());
 
         Glide.with(holder.itemView.getContext()).load(coffeeModelList.get(position).getGambar()).into(holder.gambar);
     }
@@ -60,12 +60,12 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.CoffeListH
             super(itemView);
 
             nama = itemView.findViewById(R.id.coffeeName);
-            deskripsi = itemView.findViewById(R.id.coffeedetail);
+//            deskripsi = itemView.findViewById(R.id.coffeedetail);
             gambar = itemView.findViewById(R.id.coffeeImage);
             container = itemView.findViewById(R.id.cardcoffeelist);
 
             nama.setOnClickListener(this);
-            deskripsi.setOnClickListener(this);
+//            deskripsi.setOnClickListener(this);
             gambar.setOnClickListener(this);
             container.setOnClickListener(this);
         }

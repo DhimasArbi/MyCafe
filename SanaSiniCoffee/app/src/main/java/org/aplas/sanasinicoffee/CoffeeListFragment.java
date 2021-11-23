@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,7 +59,7 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         super.onViewCreated(view, savedInstanceState);
         firebaseFirestore = FirebaseFirestore.getInstance();
         recyclerView = view.findViewById(R.id.recViewAll);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         mAdapter = new CoffeeAdapter(this);
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
@@ -105,6 +106,7 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         });
 
     }
+
 
     @Override
     public void clickedCoffee(int position, List<CoffeeModel> coffeeModels) {

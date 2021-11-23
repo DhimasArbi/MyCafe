@@ -10,44 +10,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="8dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="20dp"
         android:layout_margin="10dp">
 
         <RelativeLayout
             android:padding="12dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
 
             <ImageView
                 android:id="@+id/coffeeImage"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:src="@drawable/ic_launcher_background" />
 
             <TextView
+                android:id="@+id/coffeeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/coffeeName"
+                android:layout_below="@id/coffeeImage"
+                android:layout_marginTop="15dp"
                 android:text="Coffee Name"
-
-                android:textSize="18sp"
-                android:textStyle="bold"
                 android:textColor="@color/black"
-                android:layout_toRightOf="@id/coffeeImage"
-                android:layout_marginLeft="15dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/coffeedetail"
-                android:layout_toRightOf="@id/coffeeImage"
-                android:layout_below="@id/coffeeName"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="8dp"
-                android:text="loremloremloremloremlorem"/>
+<!--            <TextView-->
+<!--                android:id="@+id/coffeedetail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/coffeeName"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:text="loremloremloremloremlorem" />-->
 
 
 
