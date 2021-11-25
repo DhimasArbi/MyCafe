@@ -4,8 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_cart.xml" value="0.1578125" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/cart.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/cartwhite.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_minus.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_plus.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/round_border.xml" value="0.2625" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/round_btn.xml" value="0.2625" />
         <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
         <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/cart_list_style.xml" value="0.24635416666666668" />
+        <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/checkout_style.xml" value="0.24635416666666668" />
         <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/coffee_list_style.xml" value="0.24635416666666668" />
         <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_cart.xml" value="0.24635416666666668" />
         <entry key="..\:/Tugas/Semester 5/Android/Quiz/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_detail.xml" value="0.24635416666666668" />
