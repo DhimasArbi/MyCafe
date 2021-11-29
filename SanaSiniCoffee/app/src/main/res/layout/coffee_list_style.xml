@@ -37,23 +37,15 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-
-<!--            <TextView-->
-<!--                android:id="@+id/coffeedetail"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@id/coffeeName"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:text="loremloremloremloremlorem" />-->
-
-
+            <!--            <TextView-->
+            <!--                android:id="@+id/coffeedetail"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@id/coffeeName"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:text="loremloremloremloremlorem" />-->
 
         </RelativeLayout>
-
-
-
-
-
 
     </androidx.cardview.widget.CardView>
 
