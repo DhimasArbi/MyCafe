@@ -106,35 +106,7 @@ public class CartFragment extends Fragment {
             @Override
             public void onClick(View v) {
 //                                reseting the quantities of coffies once order is placed.
-                firestore.collection("Coffee").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            QuerySnapshot tasks = task.getResult();
-                            for (DocumentSnapshot ds : tasks.getDocuments()) {
-                                ds.getReference()
-                                        .update("jumlah", 0);
-                            }
-                        }
 
-
-                    }
-                });
-
-                // clearing the cart
-
-                firestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            QuerySnapshot tasks = task.getResult();
-                            for (DocumentSnapshot ds : tasks.getDocuments()) {
-                                ds.getReference()
-                                        .delete();
-                            }
-                        }
-                    }
-                });
 //                CartFragmentDirections.ActionCartFragmentToCoffeeListFragment
 //                        action = CartFragmentDirections.actionCartFragmentToCoffeeListFragment();
 //                action.setJumlah(0);
