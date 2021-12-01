@@ -55,7 +55,16 @@
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_cartFragment_to_coffeeListFragment"
+            android:id="@+id/action_cartFragment_to_checkout_styles"
+            app:destination="@id/checkout_styles" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkout_styles"
+        android:name="org.aplas.sanasinicoffee.checkout_styles"
+        android:label="checkout_styles"
+        tools:layout="@layout/checkout_styles" >
+        <action
+            android:id="@+id/action_checkout_styles_to_coffeeListFragment"
             app:destination="@id/coffeeListFragment" />
     </fragment>
 </navigation>

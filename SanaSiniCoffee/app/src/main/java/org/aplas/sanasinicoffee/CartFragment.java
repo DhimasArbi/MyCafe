@@ -138,7 +138,7 @@ public class CartFragment extends Fragment {
 //                CartFragmentDirections.ActionCartFragmentToCoffeeListFragment
 //                        action = CartFragmentDirections.actionCartFragmentToCoffeeListFragment();
 //                action.setJumlah(0);
-                navController.navigate(R.id.action_cartFragment_to_coffeeListFragment);
+                navController.navigate(R.id.action_cartFragment_to_checkout_styles);
                 Toast.makeText(getContext(), "Order Placed", Toast.LENGTH_SHORT).show();
             }
         });
