@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,6 +31,7 @@ import org.aplas.sanasinicoffee.Adapter.CartAdapter;
 import org.aplas.sanasinicoffee.Model.CartModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -64,7 +67,6 @@ public class CartFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         orderSummary = view.findViewById(R.id.orderSummary);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         firestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -101,6 +103,42 @@ public class CartFragment extends Fragment {
                 }
             }
         });
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove( RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped( RecyclerView.ViewHolder viewHolder, int direction) {
+                CartModel deleteitem = cartModelList.get(viewHolder.getAdapterPosition());
+
+                int posisi = viewHolder.getAdapterPosition();
+                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", 0);
+                firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).delete();
+
+                cartModelList.remove(viewHolder.getAdapterPosition());
+
+
+                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                Snackbar.make(recyclerView, deleteitem.getNama(), Snackbar.LENGTH_LONG).setAction("Undo", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cartModelList.add(posisi, deleteitem);
+                        mAdapter.notifyItemInserted(posisi);
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("nama", cartModelList.get(posisi).getNama());
+                        hashMap.put("jumlah", cartModelList.get(posisi).getJumlah());
+                        hashMap.put("totalHarga", cartModelList.get(posisi).getTotalHarga());
+                        hashMap.put("coffeeid", cartModelList.get(posisi).getNama());
+                        hashMap.put("gambar", cartModelList.get(posisi).getGambar());
+                        firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).set(hashMap);
+                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", cartModelList.get(posisi).getJumlah());
+                    }
+                }).show();
+            }
+        }).attachToRecyclerView(recyclerView);
+
 
         orderbutton.setOnClickListener(new View.OnClickListener() {
             @Override

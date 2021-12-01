@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/checkout_styles"
-        android:name="org.aplas.sanasinicoffee.checkout_styles"
+        android:name="org.aplas.sanasinicoffee.CheckoutStyles"
         android:label="checkout_styles"
         tools:layout="@layout/checkout_styles" >
         <action

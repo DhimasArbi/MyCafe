@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.bumptech.glide.Glide;
 
+import org.aplas.sanasinicoffee.Model.CartModel;
 import org.aplas.sanasinicoffee.Model.CoffeeModel;
 import org.aplas.sanasinicoffee.R;
 

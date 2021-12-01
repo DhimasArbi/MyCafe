@@ -20,7 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 
-public class checkout_styles extends Fragment {
+public class CheckoutStyles extends Fragment {
 
     NavController navController;
     Button home;
@@ -55,8 +55,6 @@ public class checkout_styles extends Fragment {
                                         .update("jumlah", 0);
                             }
                         }
-
-
                     }
                 });
 
