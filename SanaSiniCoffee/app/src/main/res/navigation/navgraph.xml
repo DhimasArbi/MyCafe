@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_cartFragment_to_checkout_styles"
             app:destination="@id/checkout_styles" />
+        <action
+            android:id="@+id/action_cartFragment_to_coffeeListFragment"
+            app:destination="@id/coffeeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/checkout_styles"

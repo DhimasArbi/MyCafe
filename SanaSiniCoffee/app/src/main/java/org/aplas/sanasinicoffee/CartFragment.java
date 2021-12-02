@@ -121,7 +121,7 @@ public class CartFragment extends Fragment {
 
 
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-                Snackbar.make(recyclerView, deleteitem.getNama(), Snackbar.LENGTH_LONG).setAction("Undo", new View.OnClickListener() {
+                Snackbar.make(recyclerView, deleteitem.getNama(), Snackbar.LENGTH_LONG).setAction("Batal", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         cartModelList.add(posisi, deleteitem);
@@ -143,13 +143,13 @@ public class CartFragment extends Fragment {
         orderbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                                reseting the quantities of coffies once order is placed.
-
-//                CartFragmentDirections.ActionCartFragmentToCoffeeListFragment
-//                        action = CartFragmentDirections.actionCartFragmentToCoffeeListFragment();
-//                action.setJumlah(0);
-                navController.navigate(R.id.action_cartFragment_to_checkout_styles);
-                Toast.makeText(getContext(), "Order Placed", Toast.LENGTH_SHORT).show();
+                if (cartModelList.isEmpty()){
+                    Toast.makeText(getContext(), "Cart kosong!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Silahkan pilih menu terlebih dahulu!!", Toast.LENGTH_SHORT).show();
+                    navController.navigate(R.id.action_cartFragment_to_coffeeListFragment);
+                }else {
+                    navController.navigate(R.id.action_cartFragment_to_checkout_styles);
+                }
             }
         });
 
