@@ -125,6 +125,7 @@
             <LinearLayout
                 android:id="@+id/ll1"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -144,18 +145,28 @@
                     android:textColor="@color/black" />
             </LinearLayout>
 =======
+=======
+>>>>>>> b459563 (update: jenis & ukuran)
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coffeedetaildetail"
                 android:orientation="horizontal"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp">
+<<<<<<< HEAD
 >>>>>>> b459563 (update: jenis & ukuran)
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+=======
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+>>>>>>> b459563 (update: jenis & ukuran)
                     <TextView
                         android:id="@+id/pilih1"
                         android:layout_width="wrap_content"
@@ -249,7 +260,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:layout_below="@+id/ll1"
+=======
+                android:layout_below="@+id/ll2"
+>>>>>>> b459563 (update: jenis & ukuran)
 =======
                 android:layout_below="@+id/ll2"
 >>>>>>> b459563 (update: jenis & ukuran)
@@ -266,7 +281,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:layout_below="@+id/ll1"
+=======
+                android:layout_below="@+id/ll2"
+>>>>>>> b459563 (update: jenis & ukuran)
 =======
                 android:layout_below="@+id/ll2"
 >>>>>>> b459563 (update: jenis & ukuran)
