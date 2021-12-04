@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_check.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_coffee.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17395833333333333" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/checkout_style.xml" value="0.1578125" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/checkout_styles.xml" value="0.1578125" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/coffee_list_style.xml" value="0.12182971014492754" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_cart.xml" value="0.1578125" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_detail.xml" value="0.3333333333333333" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_list.xml" value="0.1" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/mipmap-anydpi-v26/ic_hotcoffee.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/border.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_plus.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/icecup.xml" value="0.17395833333333333" />

@@ -75,9 +75,6 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
 
         jumlah = CoffeeListFragmentArgs.fromBundle(getArguments()).getJumlah();
 
-//        if (jumlah==0){
-//            jumlahCart.setText(String.valueOf(jumlah));
-//        }else {
             firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(Task<QuerySnapshot> task) {
@@ -92,11 +89,10 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
                         }
                         jumlahCart.setText(String.valueOf(jumlahsum));
                         jumlahsum = 0;
-                        savequantity.clear(); // unless we add something new to our list// previous records are cleared.
+                        savequantity.clear();
                     }
                 }
             });
-//        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
