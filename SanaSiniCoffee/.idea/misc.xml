@@ -29,7 +29,12 @@
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/coffee_list_style.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_detail.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_list.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_35.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/drawable/ic_check.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/drawable/ic_minus.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/cart_list_style.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/checkout_styles.xml" value="0.15677083333333333" />
         <entry key="app/src/main/res/layout/coffee_list_style.xml" value="0.2653985507246377" />

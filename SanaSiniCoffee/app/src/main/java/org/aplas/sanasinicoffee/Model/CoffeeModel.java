@@ -6,17 +6,19 @@ public class CoffeeModel {
 
     @DocumentId
     String coffeid;
-    String nama, deskripsi, gambar;
+    String nama, deskripsi, gambar, jenis, ukuran;
     int jumlah, harga;
 
     public CoffeeModel() {
     }
 
-    public CoffeeModel(String coffeid, String nama, String deskripsi, String gambar, int jumlah, int harga) {
+    public CoffeeModel(String coffeid, String nama, String deskripsi, String gambar, String jenis, String ukuran, int jumlah, int harga) {
         this.coffeid = coffeid;
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.gambar = gambar;
+        this.jenis = jenis;
+        this.ukuran = ukuran;
         this.jumlah = jumlah;
         this.harga = harga;
     }
@@ -69,6 +71,22 @@ public class CoffeeModel {
         this.harga = harga;
     }
 
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    public String getUkuran() {
+        return ukuran;
+    }
+
+    public void setUkuran(String ukuran) {
+        this.ukuran = ukuran;
+    }
+
     @Override
     public String toString() {
         return "CoffeeModel{" +
@@ -76,6 +94,8 @@ public class CoffeeModel {
                 ", nama='" + nama + '\'' +
                 ", deskripsi='" + deskripsi + '\'' +
                 ", gambar='" + gambar + '\'' +
+                ", jenis='" + jenis + '\'' +
+                ", ukuran='" + ukuran + '\'' +
                 ", jumlah=" + jumlah +
                 ", harga=" + harga +
                 '}';

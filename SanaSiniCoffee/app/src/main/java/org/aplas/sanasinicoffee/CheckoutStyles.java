@@ -19,6 +19,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.aplas.sanasinicoffee.Model.CoffeeModel;
+
 
 public class CheckoutStyles extends Fragment {
 
@@ -51,8 +53,9 @@ public class CheckoutStyles extends Fragment {
                         if (task.isSuccessful()) {
                             QuerySnapshot tasks = task.getResult();
                             for (DocumentSnapshot ds : tasks.getDocuments()) {
-                                ds.getReference()
-                                        .update("jumlah", 0);
+                                ds.getReference().update("jumlah", 0);
+                                ds.getReference().update("jenis","Panas");
+                                ds.getReference().update("ukuran","Kecil");
                             }
                         }
                     }
@@ -66,8 +69,7 @@ public class CheckoutStyles extends Fragment {
                         if (task.isSuccessful()) {
                             QuerySnapshot tasks = task.getResult();
                             for (DocumentSnapshot ds : tasks.getDocuments()) {
-                                ds.getReference()
-                                        .delete();
+                                ds.getReference().delete();
                             }
                         }
                     }
