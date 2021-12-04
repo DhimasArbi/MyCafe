@@ -1,17 +1,28 @@
 package org.aplas.sanasinicoffee.Model;
 
 public class CartModel {
-    String nama, gambar;
+    String coffeeid, nama, gambar, jenis, ukuran;
     int totalHarga, jumlah;
 
     public CartModel() {
     }
 
-    public CartModel(String nama, String gambar, int totalHarga, int jumlah) {
+    public CartModel(String coffeeid, String nama, String gambar, String jenis, String ukuran, int totalHarga, int jumlah) {
+        this.coffeeid = coffeeid;
         this.nama = nama;
         this.gambar = gambar;
+        this.jenis = jenis;
+        this.ukuran = ukuran;
         this.totalHarga = totalHarga;
         this.jumlah = jumlah;
+    }
+
+    public String getCoffeeid() {
+        return coffeeid;
+    }
+
+    public void setCoffeeid(String coffeeid) {
+        this.coffeeid = coffeeid;
     }
 
     public String getNama() {
@@ -44,5 +55,21 @@ public class CartModel {
 
     public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
+    }
+
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    public String getUkuran() {
+        return ukuran;
+    }
+
+    public void setUkuran(String ukuran) {
+        this.ukuran = ukuran;
     }
 }

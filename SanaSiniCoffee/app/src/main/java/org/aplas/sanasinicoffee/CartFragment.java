@@ -115,6 +115,8 @@ public class CartFragment extends Fragment {
 
                 int posisi = viewHolder.getAdapterPosition();
                 firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", 0);
+                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jenis", "Panas");
+                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("ukuran", "Kecil");
                 firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).delete();
 
                 cartModelList.remove(viewHolder.getAdapterPosition());
@@ -132,13 +134,17 @@ public class CartFragment extends Fragment {
                         hashMap.put("totalHarga", cartModelList.get(posisi).getTotalHarga());
                         hashMap.put("coffeeid", cartModelList.get(posisi).getNama());
                         hashMap.put("gambar", cartModelList.get(posisi).getGambar());
+                        hashMap.put("ukuran", cartModelList.get(posisi).getUkuran());
+                        hashMap.put("jenis", cartModelList.get(posisi).getJenis());
                         firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).set(hashMap);
                         firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", cartModelList.get(posisi).getJumlah());
+                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jenis", cartModelList.get(posisi).getJenis());
+                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("ukuran", cartModelList.get(posisi).getUkuran());
+
                     }
                 }).show();
             }
         }).attachToRecyclerView(recyclerView);
-
 
         orderbutton.setOnClickListener(new View.OnClickListener() {
             @Override

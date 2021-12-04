@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     tools:context=".CoffeeDetailFragment">
 
@@ -38,11 +38,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="6dp"
+        android:layout_below="@id/card1"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        android:layout_below="@id/card1">
+        app:cardCornerRadius="6dp"
+        app:cardElevation="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -122,56 +122,115 @@
                 android:layout_marginBottom="10dp"
                 android:text="cofee detail" />
 
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coffeedetaildetail"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp">
 
-                <LinearLayout
-                    android:id="@+id/ll1"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/coffeedetaildetail">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/pilih1"
+                    <TextView
+                        android:id="@+id/pilih1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Pilih"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="23dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rhot"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginStart="25dp"
-                            android:layout_marginTop="15dp"
-                            android:text="Pilih"
-                            android:textColor="@color/black"
-                            android:textSize="15sp" />
+                            android:drawableLeft="@drawable/coffeehot"/>
 
-                        <CheckBox
-                            android:id="@+id/hot"
+                        <RadioButton
+                            android:id="@+id/rcold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="158dp"
-                            android:layout_toEndOf="@+id/pilih1"
-                            android:button="@drawable/coffeehot"/>
+                            android:drawableLeft="@drawable/coffeecold" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
 
-                        <CheckBox
-                            android:id="@+id/cold"
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll1"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/pilih2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:text="Ukuran"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/rg2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="23dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/smallcup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginStart="25dp"
-                            android:layout_marginEnd="20dp"
-                            android:layout_toEndOf="@+id/hot"
-                            android:button="@drawable/coffeecold"/>
-                    </RelativeLayout>
+                            android:drawableLeft="@drawable/cupsmall"/>
 
-                </LinearLayout>
+                        <RadioButton
+                            android:id="@+id/mediumcup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/cupmedium" />
+
+                        <RadioButton
+                            android:id="@+id/bigcup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/cupbig" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/coffeedetaildetail"
+                android:layout_below="@+id/ll2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="80dp"
                 android:text="Total Harga"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -181,9 +240,9 @@
                 android:id="@+id/orderINFO"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/coffeedetaildetail"
+                android:layout_below="@+id/ll2"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="20dp"
                 android:text="Rp "
                 android:textColor="@color/black"
@@ -192,6 +251,7 @@
 
             <Button
                 android:id="@+id/orderdetail"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/orderINFO"
@@ -200,7 +260,6 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_btn"
                 android:text="Order"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:textColor="@color/white" />
 
 
