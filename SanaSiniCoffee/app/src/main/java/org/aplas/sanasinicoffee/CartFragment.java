@@ -111,14 +111,19 @@ public class CartFragment extends Fragment {
 
             @Override
             public void onSwiped( RecyclerView.ViewHolder viewHolder, int direction) {
-                CartModel deleteitem = cartModelList.get(viewHolder.getAdapterPosition());
-
                 int posisi = viewHolder.getAdapterPosition();
-                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", 0);
-                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jenis", "Panas");
-                firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("ukuran", "Kecil");
-                firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).delete();
+                CartModel deleteitem = cartModelList.get(posisi);
 
+
+                if (cartModelList.get(posisi).getCategory().equalsIgnoreCase("Kopi")){
+                    firestore.collection("Coffee").document(deleteitem.getId()).update("jumlah", 0);
+                    firestore.collection("Coffee").document(deleteitem.getId()).update("jenis", "Panas");
+                    firestore.collection("Coffee").document(deleteitem.getId()).update("ukuran", "Kecil");
+                }else{
+                    firestore.collection("Cake").document(deleteitem.getId()).update("jumlah", 0);
+                }
+
+                firestore.collection("Cart").document(deleteitem.getId()).delete();
                 cartModelList.remove(viewHolder.getAdapterPosition());
 
 
@@ -132,14 +137,19 @@ public class CartFragment extends Fragment {
                         hashMap.put("nama", cartModelList.get(posisi).getNama());
                         hashMap.put("jumlah", cartModelList.get(posisi).getJumlah());
                         hashMap.put("totalHarga", cartModelList.get(posisi).getTotalHarga());
-                        hashMap.put("coffeeid", cartModelList.get(posisi).getNama());
+                        hashMap.put("id", cartModelList.get(posisi).getId());
                         hashMap.put("gambar", cartModelList.get(posisi).getGambar());
-                        hashMap.put("ukuran", cartModelList.get(posisi).getUkuran());
-                        hashMap.put("jenis", cartModelList.get(posisi).getJenis());
+                        hashMap.put("category", cartModelList.get(posisi).getCategory());
                         firestore.collection("Cart").document(cartModelList.get(posisi).getNama()).set(hashMap);
-                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", cartModelList.get(posisi).getJumlah());
-                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jenis", cartModelList.get(posisi).getJenis());
-                        firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("ukuran", cartModelList.get(posisi).getUkuran());
+                        if (cartModelList.get(posisi).getCategory().equalsIgnoreCase("kopi")){
+                            hashMap.put("ukuran", cartModelList.get(posisi).getUkuran());
+                            hashMap.put("jenis", cartModelList.get(posisi).getJenis());
+                            firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jumlah", cartModelList.get(posisi).getJumlah());
+                            firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("jenis", cartModelList.get(posisi).getJenis());
+                            firestore.collection("Coffee").document(cartModelList.get(posisi).getNama()).update("ukuran", cartModelList.get(posisi).getUkuran());
+                        }else if (cartModelList.get(posisi).getCategory().equalsIgnoreCase("Kue")){
+                            firestore.collection("Cake").document(cartModelList.get(posisi).getNama()).update("jumlah", cartModelList.get(posisi).getJumlah());
+                        }
 
                     }
                 }).show();

@@ -2,34 +2,31 @@ package org.aplas.sanasinicoffee.Model;
 
 import com.google.firebase.firestore.DocumentId;
 
-public class CoffeeModel {
+public class CakeModel {
 
     @DocumentId
-    String coffeid;
-    String nama, deskripsi, gambar, jenis, ukuran, category;
+    String cakeid;
+    String nama, deskripsi, gambar;
     int jumlah, harga;
 
-    public CoffeeModel() {
+    public CakeModel() {
     }
 
-    public CoffeeModel(String coffeid, String nama, String deskripsi, String gambar, String jenis, String ukuran, String category, int jumlah, int harga) {
-        this.coffeid = coffeid;
+    public CakeModel(String cakeid, String nama, String deskripsi, String gambar, int jumlah, int harga) {
+        this.cakeid = cakeid;
         this.nama = nama;
         this.deskripsi = deskripsi;
         this.gambar = gambar;
-        this.jenis = jenis;
-        this.ukuran = ukuran;
-        this.category = category;
         this.jumlah = jumlah;
         this.harga = harga;
     }
 
-    public String getCoffeid() {
-        return coffeid;
+    public String getCakeid() {
+        return cakeid;
     }
 
-    public void setCoffeid(String coffeid) {
-        this.coffeid = coffeid;
+    public void setCakeid(String cakeid) {
+        this.cakeid = cakeid;
     }
 
     public String getNama() {
@@ -72,40 +69,13 @@ public class CoffeeModel {
         this.harga = harga;
     }
 
-    public String getJenis() {
-        return jenis;
-    }
-
-    public void setJenis(String jenis) {
-        this.jenis = jenis;
-    }
-
-    public String getUkuran() {
-        return ukuran;
-    }
-
-    public void setUkuran(String ukuran) {
-        this.ukuran = ukuran;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     @Override
     public String toString() {
-        return "CoffeeModel{" +
-                "coffeid='" + coffeid + '\'' +
+        return "CakeModel{" +
+                "cakeid='" + cakeid + '\'' +
                 ", nama='" + nama + '\'' +
                 ", deskripsi='" + deskripsi + '\'' +
                 ", gambar='" + gambar + '\'' +
-                ", jenis='" + jenis + '\'' +
-                ", ukuran='" + ukuran + '\'' +
-                ", category='" + category + '\'' +
                 ", jumlah=" + jumlah +
                 ", harga=" + harga +
                 '}';

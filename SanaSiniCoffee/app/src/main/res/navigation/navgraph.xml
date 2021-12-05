@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/coffeeListFragment">
+    app:startDestination="@id/categoryFragment">
     <fragment
         android:id="@+id/coffeeListFragment"
         android:name="org.aplas.sanasinicoffee.CoffeeListFragment"
@@ -19,6 +19,9 @@
             android:name="jumlah"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_coffeeListFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/coffeeDetailFragment"
@@ -60,6 +63,9 @@
         <action
             android:id="@+id/action_cartFragment_to_coffeeListFragment"
             app:destination="@id/coffeeListFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_cakeListFragment"
+            app:destination="@id/cakeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/checkout_styles"
@@ -67,7 +73,67 @@
         android:label="checkout_styles"
         tools:layout="@layout/checkout_styles" >
         <action
-            android:id="@+id/action_checkout_styles_to_coffeeListFragment"
+            android:id="@+id/action_checkout_styles_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="org.aplas.sanasinicoffee.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_coffeeListFragment"
             app:destination="@id/coffeeListFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_cakeListFragment"
+            app:destination="@id/cakeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cakeListFragment"
+        android:name="org.aplas.sanasinicoffee.CakeListFragment"
+        android:label="fragment_cake_list"
+        tools:layout="@layout/fragment_cake_list" >
+        <action
+            android:id="@+id/action_cakeListFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_cakeListFragment_to_cakeDetailFragment"
+            app:destination="@id/cakeDetailFragment" />
+        <action
+            android:id="@+id/action_cakeListFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <argument
+            android:name="jumlah"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/cakeDetailFragment"
+        android:name="org.aplas.sanasinicoffee.CakeDetailFragment"
+        android:label="fragment_cake_detail"
+        tools:layout="@layout/fragment_cake_detail" >
+        <action
+            android:id="@+id/action_cakeDetailFragment_to_cakeListFragment"
+            app:destination="@id/cakeListFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="nama"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="deskripsi"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="gambar"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="harga"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

@@ -22,57 +22,56 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.aplas.sanasinicoffee.Adapter.CoffeeAdapter;
-import org.aplas.sanasinicoffee.MVVM.CoffeeViewModel;
+import org.aplas.sanasinicoffee.Adapter.CakeAdapter;
+import org.aplas.sanasinicoffee.MVVM.CakeViewModel;
+import org.aplas.sanasinicoffee.Model.CakeModel;
 import org.aplas.sanasinicoffee.Model.CartModel;
-import org.aplas.sanasinicoffee.Model.CoffeeModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOneCoffee {
+public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake {
 
     FirebaseFirestore firebaseFirestore;
-    CoffeeAdapter mAdapter;
+    CakeAdapter mAdapter;
     RecyclerView recyclerView;
-    CoffeeViewModel viewModel;
+    CakeViewModel viewModel;
     NavController navController;
     FloatingActionButton fab;
     int jumlah, jumlahsum;
     TextView jumlahCart;
     List<Integer> savequantity = new ArrayList<>();
 
-    public CoffeeListFragment() {
+    public CakeListFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_coffee_list, container, false);
+        return inflater.inflate(R.layout.fragment_cake_list, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated( View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         firebaseFirestore = FirebaseFirestore.getInstance();
-        recyclerView = view.findViewById(R.id.recViewAll);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        mAdapter = new CoffeeAdapter(this);
+        recyclerView = view.findViewById(R.id.recViewCake);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        mAdapter = new CakeAdapter(this);
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-        viewModel = new ViewModelProvider(getActivity()).get(CoffeeViewModel.class);
-        viewModel.getCofeeList().observe(getViewLifecycleOwner(), new Observer<List<CoffeeModel>>() {
+        viewModel = new ViewModelProvider(getActivity()).get(CakeViewModel.class);
+        viewModel.getCakeList().observe(getViewLifecycleOwner(), new Observer<List<CakeModel>>() {
             @Override
-            public void onChanged(List<CoffeeModel> coffeeModels) {
-                mAdapter.setCoffeeModelList(coffeeModels);
+            public void onChanged(List<CakeModel> cakeModels) {
+                mAdapter.setCakeModelList(cakeModels);
                 recyclerView.setAdapter(mAdapter);
             }
         });
-
-        jumlah = CoffeeListFragmentArgs.fromBundle(getArguments()).getJumlah();
 
         firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -95,28 +94,26 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_coffeeListFragment_to_cartFragment);
+            public void onClick(View v) {
+                navController.navigate(R.id.action_cakeListFragment_to_cartFragment);
             }
         });
-
     }
 
-
     @Override
-    public void clickedCoffee(int position, List<CoffeeModel> coffeeModels) {
-        String coffeid = coffeeModels.get(position).getCoffeid();
-        String deskripsi = coffeeModels.get(position).getDeskripsi();
-        String nama = coffeeModels.get(position).getNama();
-        int harga = coffeeModels.get(position).getHarga();
-        String gambar = coffeeModels.get(position).getGambar();
-        CoffeeListFragmentDirections.ActionCoffeeListFragmentToCoffeeDetailFragment
-                action = CoffeeListFragmentDirections.actionCoffeeListFragmentToCoffeeDetailFragment();
+    public void clickedCake(int position, List<CakeModel> cakeModels) {
+        String cakeid = cakeModels.get(position).getCakeid();
+        String deskripsi = cakeModels.get(position).getDeskripsi();
+        String nama = cakeModels.get(position).getNama();
+        int harga = cakeModels.get(position).getHarga();
+        String gambar = cakeModels.get(position).getGambar();
+        CakeListFragmentDirections.ActionCakeListFragmentToCakeDetailFragment
+        action = CakeListFragmentDirections.actionCakeListFragmentToCakeDetailFragment();
         action.setNama(nama);
         action.setDeskripsi(deskripsi);
         action.setGambar(gambar);
         action.setHarga(harga);
-        action.setId(coffeid);
-        navController.navigate(action); //
+        action.setId(cakeid);
+        navController.navigate(action);
     }
 }
