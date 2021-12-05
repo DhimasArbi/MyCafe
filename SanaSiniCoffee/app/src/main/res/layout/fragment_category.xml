@@ -7,75 +7,80 @@
     android:gravity="center"
     tools:context=".CategoryFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardC1"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        android:layout_margin="8dp"
-        android:backgroundTint="@color/teal_200"
-        android:gravity="center"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardC1"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/teal_200"
             android:gravity="center"
-            android:padding="10dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
 
-            <ImageView
-                android:id="@+id/gbCtg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cat1" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/nmCtg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/gbCtg"
-                android:layout_marginTop="5dp"
-                android:text="Coffee"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardC2"
-        android:layout_width="150dp"
-        android:layout_height="300dp"
-        android:layout_margin="8dp"
-        android:layout_toRightOf="@id/cardC1"
-        android:backgroundTint="@color/purple_200"
-        android:gravity="center"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="4dp">
+                <ImageView
+                    android:id="@+id/gbCtg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cat1" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+                <TextView
+                    android:id="@+id/nmCtg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gbCtg"
+                    android:layout_marginTop="5dp"
+                    android:text="Coffee"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardC2"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/purple_200"
             android:gravity="center"
-            android:padding="10dp">
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
 
-            <ImageView
-                android:id="@+id/gbCtg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cat2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/nmCtg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/gbCtg2"
-                android:layout_marginTop="5dp"
-                android:text="Cake"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/gbCtg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cat2"/>
+
+                <TextView
+                    android:id="@+id/nmCtg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gbCtg2"
+                    android:layout_marginTop="5dp"
+                    android:text="Cake"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 </RelativeLayout>

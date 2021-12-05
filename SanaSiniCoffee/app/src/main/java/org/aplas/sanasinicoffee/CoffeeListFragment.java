@@ -72,7 +72,6 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
             }
         });
 
-        jumlah = CoffeeListFragmentArgs.fromBundle(getArguments()).getJumlah();
 
         firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

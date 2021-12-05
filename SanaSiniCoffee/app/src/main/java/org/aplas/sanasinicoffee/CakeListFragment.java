@@ -2,21 +2,28 @@ package org.aplas.sanasinicoffee;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,6 +45,7 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
     CakeViewModel viewModel;
     NavController navController;
     FloatingActionButton fab;
+    BottomNavigationView bottomNavigationView;
     int jumlah, jumlahsum;
     TextView jumlahCart;
     List<Integer> savequantity = new ArrayList<>();
@@ -55,15 +63,21 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
     }
 
     @Override
-    public void onViewCreated( View view,  Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         firebaseFirestore = FirebaseFirestore.getInstance();
         recyclerView = view.findViewById(R.id.recViewCake);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         mAdapter = new CakeAdapter(this);
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
+//        bottomNavigationView.setSelectedItemId(R.id.coffee);
+//        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
+//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
+//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
+
+
         viewModel = new ViewModelProvider(getActivity()).get(CakeViewModel.class);
         viewModel.getCakeList().observe(getViewLifecycleOwner(), new Observer<List<CakeModel>>() {
             @Override
@@ -72,6 +86,8 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
                 recyclerView.setAdapter(mAdapter);
             }
         });
+
+
 
         firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -108,7 +124,7 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         int harga = cakeModels.get(position).getHarga();
         String gambar = cakeModels.get(position).getGambar();
         CakeListFragmentDirections.ActionCakeListFragmentToCakeDetailFragment
-        action = CakeListFragmentDirections.actionCakeListFragmentToCakeDetailFragment();
+                action = CakeListFragmentDirections.actionCakeListFragmentToCakeDetailFragment();
         action.setNama(nama);
         action.setDeskripsi(deskripsi);
         action.setGambar(gambar);
@@ -116,4 +132,23 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         action.setId(cakeid);
         navController.navigate(action);
     }
+
+    //    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        switch (item.getItemId()){
+//            case R.id.coffee:
+//                fragment = new CoffeeListFragment();
+//                break;
+//            case R.id.cake:
+//                fragment = new CakeListFragment();
+//                break;
+//            case R.id.order:
+//                fragment = new CartFragment();
+//                break;
+//        }
+//        FragmentTransaction transaction = fragmentManager.beginTransaction();
+//        transaction.replace(R.id.fragment, fragment).commit();
+//        return true;
+//    }
+
 }
