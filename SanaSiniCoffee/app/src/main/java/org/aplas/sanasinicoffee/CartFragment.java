@@ -115,15 +115,18 @@ public class CartFragment extends Fragment {
                 CartModel deleteitem = cartModelList.get(posisi);
 
 
-                if (cartModelList.get(posisi).getCategory().equalsIgnoreCase("Kopi")){
+                if (deleteitem.getCategory().equalsIgnoreCase("Kopi")){
                     firestore.collection("Coffee").document(deleteitem.getId()).update("jumlah", 0);
                     firestore.collection("Coffee").document(deleteitem.getId()).update("jenis", "Panas");
                     firestore.collection("Coffee").document(deleteitem.getId()).update("ukuran", "Kecil");
-                }else{
+                    firestore.collection("Cart").document(deleteitem.getId()).delete();
+                }else if (deleteitem.getCategory().equalsIgnoreCase("Kue")){
                     firestore.collection("Cake").document(deleteitem.getId()).update("jumlah", 0);
+                    firestore.collection("Cart").document(deleteitem.getId()).delete();
+                }else {
+                    firestore.collection("Cart").document(deleteitem.getId()).delete();
                 }
 
-                firestore.collection("Cart").document(deleteitem.getId()).delete();
                 cartModelList.remove(viewHolder.getAdapterPosition());
 
 

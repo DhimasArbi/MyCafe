@@ -18,6 +18,15 @@ public class CartModel {
         this.jumlah = jumlah;
     }
 
+    public CartModel(String id, String nama, String gambar, String category, int totalHarga, int jumlah) {
+        this.id = id;
+        this.nama = nama;
+        this.gambar = gambar;
+        this.category = category;
+        this.totalHarga = totalHarga;
+        this.jumlah = jumlah;
+    }
+
     public String getId() {
         return id;
     }

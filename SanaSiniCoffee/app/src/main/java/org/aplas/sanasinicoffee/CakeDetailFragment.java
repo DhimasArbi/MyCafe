@@ -111,7 +111,7 @@ public class CakeDetailFragment extends Fragment {
                 } else {
                     jumlah--;
                     quantity.setText(String.valueOf(jumlah));
-
+                    totalHarga = harga * jumlah;
                     orderInfo.setText("Rp " + totalHarga);
 
                     firebaseFirestore.collection("Cake").document(cakeid).update("jumlah", jumlah).addOnCompleteListener(new OnCompleteListener<Void>() {
