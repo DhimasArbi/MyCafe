@@ -1,28 +1,38 @@
 package org.aplas.sanasinicoffee.Model;
 
 public class CartModel {
-    String coffeeid, nama, gambar, jenis, ukuran;
+    String id, nama, gambar, jenis, ukuran, category;
     int totalHarga, jumlah;
 
     public CartModel() {
     }
 
-    public CartModel(String coffeeid, String nama, String gambar, String jenis, String ukuran, int totalHarga, int jumlah) {
-        this.coffeeid = coffeeid;
+    public CartModel(String id, String nama, String gambar, String jenis, String ukuran, String category, int totalHarga, int jumlah) {
+        this.id = id;
         this.nama = nama;
         this.gambar = gambar;
         this.jenis = jenis;
         this.ukuran = ukuran;
+        this.category = category;
         this.totalHarga = totalHarga;
         this.jumlah = jumlah;
     }
 
-    public String getCoffeeid() {
-        return coffeeid;
+    public CartModel(String id, String nama, String gambar, String category, int totalHarga, int jumlah) {
+        this.id = id;
+        this.nama = nama;
+        this.gambar = gambar;
+        this.category = category;
+        this.totalHarga = totalHarga;
+        this.jumlah = jumlah;
     }
 
-    public void setCoffeeid(String coffeeid) {
-        this.coffeeid = coffeeid;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getNama() {
@@ -41,22 +51,6 @@ public class CartModel {
         this.gambar = gambar;
     }
 
-    public int getTotalHarga() {
-        return totalHarga;
-    }
-
-    public void setTotalHarga(int totalHarga) {
-        this.totalHarga = totalHarga;
-    }
-
-    public int getJumlah() {
-        return jumlah;
-    }
-
-    public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
-    }
-
     public String getJenis() {
         return jenis;
     }
@@ -71,5 +65,29 @@ public class CartModel {
 
     public void setUkuran(String ukuran) {
         this.ukuran = ukuran;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getTotalHarga() {
+        return totalHarga;
+    }
+
+    public void setTotalHarga(int totalHarga) {
+        this.totalHarga = totalHarga;
+    }
+
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
     }
 }

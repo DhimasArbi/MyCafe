@@ -88,7 +88,7 @@ public class CoffeeDetailFragment extends Fragment {
         rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rhot:
                         jenis = "Panas";
                         break;
@@ -107,7 +107,7 @@ public class CoffeeDetailFragment extends Fragment {
         rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.smallcup:
                         ukuran = "Kecil";
                         break;
@@ -132,31 +132,31 @@ public class CoffeeDetailFragment extends Fragment {
         deskripsi.setText(deskripsikopi);
 
 
-            firebaseFirestore.collection("Coffee").document(coffeeid).addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                @Override
-                public void onEvent(DocumentSnapshot value, FirebaseFirestoreException error) {
-                    CoffeeModel coffeeModel = value.toObject(CoffeeModel.class);
-                    jumlah = coffeeModel.getJumlah();
-                    quantity.setText(String.valueOf(jumlah));
-                    jenis = coffeeModel.getJenis();
-                    ukuran = coffeeModel.getUkuran();
+        firebaseFirestore.collection("Coffee").document(coffeeid).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(DocumentSnapshot value, FirebaseFirestoreException error) {
+                CoffeeModel coffeeModel = value.toObject(CoffeeModel.class);
+                jumlah = coffeeModel.getJumlah();
+                quantity.setText(String.valueOf(jumlah));
+                jenis = coffeeModel.getJenis();
+                ukuran = coffeeModel.getUkuran();
 
-                    if (jenis.equalsIgnoreCase("Panas")){
-                        rhot.setChecked(true);
-                    }else if (jenis.equalsIgnoreCase("Dingin")){
-                        rcold.setChecked(true);
-                    }
-                    if (ukuran.equalsIgnoreCase("Kecil")) {
-                        rsmall.setChecked(true);
-                    } else if (ukuran.equalsIgnoreCase("Medium")) {
-                        rmedium.setChecked(true);
-                    }else if (ukuran.equalsIgnoreCase("Besar")){
-                        rbig.setChecked(true);
-                    }
-
-                    orderInfo.setText("Rp " + hitung());
+                if (jenis.equalsIgnoreCase("Panas")) {
+                    rhot.setChecked(true);
+                } else if (jenis.equalsIgnoreCase("Dingin")) {
+                    rcold.setChecked(true);
                 }
-            });
+                if (ukuran.equalsIgnoreCase("Kecil")) {
+                    rsmall.setChecked(true);
+                } else if (ukuran.equalsIgnoreCase("Medium")) {
+                    rmedium.setChecked(true);
+                } else if (ukuran.equalsIgnoreCase("Besar")) {
+                    rbig.setChecked(true);
+                }
+
+                orderInfo.setText("Rp " + hitung());
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,12 +210,13 @@ public class CoffeeDetailFragment extends Fragment {
             }
         });
     }
-    private int hitung(){
-        if (ukuran.equalsIgnoreCase("Kecil")){
+
+    private int hitung() {
+        if (ukuran.equalsIgnoreCase("Kecil")) {
             totalHarga = harga * jumlah;
-        }else if (ukuran.equalsIgnoreCase("Medium")){
+        } else if (ukuran.equalsIgnoreCase("Medium")) {
             totalHarga = (harga * jumlah) + 1500;
-        }else if (ukuran.equalsIgnoreCase("Besar")){
+        } else if (ukuran.equalsIgnoreCase("Besar")) {
             totalHarga = (harga * jumlah) + 2000;
         }
         return totalHarga;
@@ -226,16 +227,17 @@ public class CoffeeDetailFragment extends Fragment {
         hashMap.put("nama", namakopi);
         hashMap.put("jumlah", jumlah);
         hashMap.put("totalHarga", hitung());
-        hashMap.put("coffeeid", coffeeid);
+        hashMap.put("id", coffeeid);
         hashMap.put("gambar", gambarkopi);
         hashMap.put("jenis", jenis);
         hashMap.put("ukuran", ukuran);
+        hashMap.put("category", "Kopi");
 
         if (jumlah == 0) {
             Toast.makeText(getContext(), "Minimal Order: 1", Toast.LENGTH_SHORT).show();
             Toast.makeText(getContext(), "Menu tidak ditambahkan ke cart", Toast.LENGTH_SHORT).show();
-            firebaseFirestore.collection("Coffee").document(namakopi).update("jenis","Panas");
-            firebaseFirestore.collection("Coffee").document(namakopi).update("ukuran","Kecil");
+            firebaseFirestore.collection("Coffee").document(namakopi).update("jenis", "Panas");
+            firebaseFirestore.collection("Coffee").document(namakopi).update("ukuran", "Kecil");
             firebaseFirestore.collection("Cart").document(namakopi).delete();
 
             CoffeeDetailFragmentDirections.ActionCoffeeDetailFragmentToCoffeeListFragment

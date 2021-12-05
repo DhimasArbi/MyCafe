@@ -50,7 +50,7 @@
                 android:layout_toRightOf="@id/cartImage"
                 android:text="Hot | Small"
                 android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/orderdetailquantity"

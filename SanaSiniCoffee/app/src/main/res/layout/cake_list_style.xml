@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardcoffeelist"
+        android:id="@+id/cardcakelist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="4dp"
@@ -21,18 +21,18 @@
 
 
             <ImageView
-                android:id="@+id/coffeeImage"
+                android:id="@+id/cakeImage"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/coffeeName"
+                android:id="@+id/cakeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/coffeeImage"
+                android:layout_below="@id/cakeImage"
                 android:layout_marginTop="15dp"
-                android:text="Coffee Name"
+                android:text="Cake Name"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />

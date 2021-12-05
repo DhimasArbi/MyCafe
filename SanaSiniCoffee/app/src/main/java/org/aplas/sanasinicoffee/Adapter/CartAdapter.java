@@ -1,11 +1,13 @@
 package org.aplas.sanasinicoffee.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
@@ -36,7 +38,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder> {
         holder.jumlahitem.setText("x" + cartModelList.get(position).getJumlah());
         holder.harga.setText("Rp "+cartModelList.get(position).getTotalHarga());
         holder.nama.setText(cartModelList.get(position).getNama());
-        holder.detail.setText(cartModelList.get(position).getJenis()+" | "+cartModelList.get(position).getUkuran());
+
+        if (cartModelList.get(position).getCategory().equals("Kopi")){
+            holder.detail.setText(cartModelList.get(position).getJenis()+" | "+cartModelList.get(position).getUkuran());
+        }else if (cartModelList.get(position).getCategory().equals("Kue")) {
+            holder.detail.setEnabled(false);
+            holder.detail.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override

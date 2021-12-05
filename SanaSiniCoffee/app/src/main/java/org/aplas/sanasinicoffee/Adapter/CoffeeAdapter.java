@@ -6,14 +6,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.bumptech.glide.Glide;
 
-import org.aplas.sanasinicoffee.Model.CartModel;
 import org.aplas.sanasinicoffee.Model.CoffeeModel;
 import org.aplas.sanasinicoffee.R;
 
@@ -53,7 +51,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.CoffeListH
 
     class CoffeListHolder extends ViewHolder implements View.OnClickListener{
 
-        TextView nama, deskripsi;
+        TextView nama;
         ImageView gambar;
         CardView container;
 

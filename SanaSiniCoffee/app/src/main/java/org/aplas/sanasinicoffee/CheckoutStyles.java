@@ -74,7 +74,7 @@ public class CheckoutStyles extends Fragment {
                         }
                     }
                 });
-                navController.navigate(R.id.action_checkout_styles_to_coffeeListFragment);
+                navController.navigate(R.id.action_checkout_styles_to_categoryFragment);
             }
         });
     }

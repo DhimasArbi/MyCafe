@@ -55,6 +55,15 @@
 
 
         <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/homeBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="11dp"
+            android:drawableTop="@drawable/ic_home"
+            android:background="@drawable/round_btn"
+            android:layout_toLeftOf="@+id/orderNow"/>
+        <Button
             android:id="@+id/orderNow"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -65,7 +74,7 @@
             android:layout_marginBottom="11dp"
             android:background="@drawable/round_btn"
             android:drawableLeft="@drawable/cartwhite"
-            android:text="ORDER NOW"
+            android:text="ORDER"
             android:textColor="@color/white"></Button>
     </RelativeLayout>
 </RelativeLayout>
