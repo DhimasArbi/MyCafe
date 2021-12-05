@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_coffeeListFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_coffeeListFragment_to_cakeListFragment"
+            app:destination="@id/cakeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/coffeeDetailFragment"
@@ -66,6 +69,9 @@
         <action
             android:id="@+id/action_cartFragment_to_cakeListFragment"
             app:destination="@id/cakeListFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/checkout_styles"
@@ -87,6 +93,9 @@
         <action
             android:id="@+id/action_categoryFragment_to_cakeListFragment"
             app:destination="@id/cakeListFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/cakeListFragment"
@@ -106,6 +115,9 @@
             android:name="jumlah"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_cakeListFragment_to_coffeeListFragment"
+            app:destination="@id/coffeeListFragment" />
     </fragment>
     <fragment
         android:id="@+id/cakeDetailFragment"

@@ -44,9 +44,9 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
     RecyclerView recyclerView;
     CakeViewModel viewModel;
     NavController navController;
-    FloatingActionButton fab;
+    FloatingActionButton fab, fabcoffe;
     BottomNavigationView bottomNavigationView;
-    int jumlah, jumlahsum;
+    int jumlahsum;
     TextView jumlahCart;
     List<Integer> savequantity = new ArrayList<>();
 
@@ -72,12 +72,7 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-//        bottomNavigationView.setSelectedItemId(R.id.coffee);
-//        bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
-//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
-
-
+        fabcoffe = view.findViewById(R.id.fabcoffe);
         viewModel = new ViewModelProvider(getActivity()).get(CakeViewModel.class);
         viewModel.getCakeList().observe(getViewLifecycleOwner(), new Observer<List<CakeModel>>() {
             @Override
@@ -114,6 +109,12 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
                 navController.navigate(R.id.action_cakeListFragment_to_cartFragment);
             }
         });
+        fabcoffe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_cakeListFragment_to_coffeeListFragment);
+            }
+        });
     }
 
     @Override
@@ -133,22 +134,5 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         navController.navigate(action);
     }
 
-    //    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.coffee:
-//                fragment = new CoffeeListFragment();
-//                break;
-//            case R.id.cake:
-//                fragment = new CakeListFragment();
-//                break;
-//            case R.id.order:
-//                fragment = new CartFragment();
-//                break;
-//        }
-//        FragmentTransaction transaction = fragmentManager.beginTransaction();
-//        transaction.replace(R.id.fragment, fragment).commit();
-//        return true;
-//    }
 
 }

@@ -40,7 +40,7 @@ public class CartFragment extends Fragment {
     CartAdapter mAdapter;
     RecyclerView recyclerView;
     FirebaseFirestore firestore;
-    Button orderbutton;
+    Button orderbutton, homeBtn;
     TextView orderSummary;
     NavController navController;
 
@@ -63,6 +63,7 @@ public class CartFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         mAdapter = new CartAdapter();
         orderbutton = view.findViewById(R.id.orderNow);
+        homeBtn = view.findViewById(R.id.homeBtn);
         recyclerView = view.findViewById(R.id.cartRecView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -178,5 +179,11 @@ public class CartFragment extends Fragment {
             }
         });
 
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_cartFragment_to_categoryFragment);
+            }
+        });
     }
 }
