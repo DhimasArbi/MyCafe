@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,6 +41,7 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
     CoffeeViewModel viewModel;
     NavController navController;
     FloatingActionButton fab, fabcake;
+    BottomNavigationView bottomNavigationView;
     int jumlah, jumlahsum;
     TextView jumlahCart;
     List<Integer> savequantity = new ArrayList<>();
@@ -64,6 +68,9 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
         fabcake = view.findViewById(R.id.fabcake);
+        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
+        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
+        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         viewModel = new ViewModelProvider(getActivity()).get(CoffeeViewModel.class);
         viewModel.getCofeeList().observe(getViewLifecycleOwner(), new Observer<List<CoffeeModel>>() {
             @Override

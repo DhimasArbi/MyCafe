@@ -3,11 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_check.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_coffee.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_launcher_background.xml" value="0.17395833333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/activity_main.xml" value="0.13289473684210526" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/checkout_style.xml" value="0.1578125" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/checkout_styles.xml" value="0.1578125" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/coffee_list_style.xml" value="0.12182971014492754" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_cake_list.xml" value="0.1578125" />
         <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_cart.xml" value="0.1578125" />
-        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_list.xml" value="0.1" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_detail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_list.xml" value="0.14666666666666667" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1578125" />
+        <entry key="..\:/Project Mobile/MyCafe/SanaSiniCoffee/app/src/main/res/mipmap-anydpi-v26/ic_hotcoffee.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/border.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/ic_plus.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/dhimas/Documents/AndroidStudioProjects/MyCafe/SanaSiniCoffee/app/src/main/res/drawable/icecup.xml" value="0.17395833333333333" />
@@ -23,32 +32,12 @@
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/coffee_list_style.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_detail.xml" value="0.1" />
         <entry key="..\:/Users/dhimas/SanaSiniCoffee/app/src/main/res/layout/fragment_coffee_list.xml" value="0.16666666666666666" />
-        <entry key="app/src/main/res/drawable/cartwhite.xml" value="0.26623931623931624" />
-        <entry key="app/src/main/res/drawable/coffee_cup.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/donut.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_35.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/ic_check.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/ic_minus.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/drawable/round_btn.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/drawable/splash_bg.xml" value="0.32447916666666665" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/cake_list_style.xml" value="0.1" />
         <entry key="app/src/main/res/layout/cart_list_style.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/category_list.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/category_list_style.xml" value="0.1" />
         <entry key="app/src/main/res/layout/checkout_styles.xml" value="0.15677083333333333" />
         <entry key="app/src/main/res/layout/coffee_list_style.xml" value="0.2653985507246377" />
-        <entry key="app/src/main/res/layout/fragment_cake_detail.xml" value="0.4" />
-        <entry key="app/src/main/res/layout/fragment_cake_list.xml" value="0.4" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_coffee_detail.xml" value="0.30416666666666664" />
-        <entry key="app/src/main/res/layout/fragment_coffee_list.xml" value="0.264" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/layout/fragment_coffee_list.xml" value="0.15677083333333333" />
       </map>
     </option>
   </component>

@@ -57,25 +57,25 @@ public class CategoryFragment extends Fragment {
         card2 = view.findViewById(R.id.cardC2);
         fab = view.findViewById(R.id.fabctg);
 
-        card1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_categoryFragment_to_coffeeListFragment);
-            }
-        });
-        card2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_categoryFragment_to_cakeListFragment);
-            }
-        });
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_categoryFragment_to_cartFragment);
-            }
-        });
+//        card1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_categoryFragment_to_coffeeListFragment);
+//            }
+//        });
+//        card2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_categoryFragment_to_cakeListFragment);
+//            }
+//        });
+//
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_categoryFragment_to_cartFragment);
+//            }
+//        });
 
         firebaseFirestore.collection("Cart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
