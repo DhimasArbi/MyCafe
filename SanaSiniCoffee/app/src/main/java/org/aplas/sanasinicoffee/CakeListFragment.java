@@ -72,9 +72,10 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
-        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
+        bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
+//        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
+//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
+//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         viewModel = new ViewModelProvider(getActivity()).get(CakeViewModel.class);
         viewModel.getCakeList().observe(getViewLifecycleOwner(), new Observer<List<CakeModel>>() {
             @Override
@@ -108,7 +109,10 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_cakeListFragment_to_cartFragment);
+                CakeListFragmentDirections.ActionCakeListFragmentToCartFragment
+                        action = CakeListFragmentDirections.actionCakeListFragmentToCartFragment();
+                action.setCategory("Kue");
+                navController.navigate(action);
             }
         });
     }

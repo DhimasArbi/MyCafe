@@ -67,9 +67,10 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
-        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
+        bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
+//        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
+//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
+//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         viewModel = new ViewModelProvider(getActivity()).get(CoffeeViewModel.class);
         viewModel.getCofeeList().observe(getViewLifecycleOwner(), new Observer<List<CoffeeModel>>() {
             @Override
@@ -102,7 +103,10 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_coffeeListFragment_to_cartFragment);
+                CoffeeListFragmentDirections.ActionCoffeeListFragmentToCartFragment
+                        action = CoffeeListFragmentDirections.actionCoffeeListFragmentToCartFragment();
+                action.setCategory("Kopi");
+                navController.navigate(action);
             }
         });
 

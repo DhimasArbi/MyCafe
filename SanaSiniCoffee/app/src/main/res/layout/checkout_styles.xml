@@ -30,7 +30,8 @@
             android:text="Order Success"
             android:textColor="@color/black"
             android:textSize="30sp"
-            android:typeface="serif" />
+            android:typeface="serif"
+            android:fontFamily="@font/poppins_medium"/>
 
         <TextView
             android:id="@+id/subtitle"
@@ -43,19 +44,21 @@
             android:textColor="@color/grey"
             android:layout_below="@id/title"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_regular"/>
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonhome"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="@style/TextAppearance.MaterialComponents.Button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@+id/subtitle"
             android:layout_marginTop="51dp"
             android:background="@drawable/round_btn"
             android:text="Home"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"/>
 
     </RelativeLayout>
 

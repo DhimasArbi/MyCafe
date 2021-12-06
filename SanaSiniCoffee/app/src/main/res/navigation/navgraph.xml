@@ -66,6 +66,10 @@
         <action
             android:id="@+id/action_cartFragment_to_cakeListFragment"
             app:destination="@id/cakeListFragment" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="null" />
     </fragment>
     <fragment
         android:id="@+id/checkout_styles"

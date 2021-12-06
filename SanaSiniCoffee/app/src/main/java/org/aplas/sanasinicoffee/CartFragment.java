@@ -2,13 +2,9 @@ package org.aplas.sanasinicoffee;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -43,10 +39,9 @@ public class CartFragment extends Fragment {
     CartAdapter mAdapter;
     RecyclerView recyclerView;
     FirebaseFirestore firestore;
-    Button orderbutton, homeBtn;
+    MaterialButton homeBtn, orderbutton;
     TextView orderSummary;
     NavController navController;
-    BottomNavigationView bottomNavigationView;
 
     List<CartModel> cartModelList = new ArrayList<>();
     int totalOrderCost = 0;
@@ -68,9 +63,6 @@ public class CartFragment extends Fragment {
         mAdapter = new CartAdapter();
         orderbutton = view.findViewById(R.id.orderNow);
         homeBtn = view.findViewById(R.id.homeBtn);
-        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
-        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         recyclerView = view.findViewById(R.id.cartRecView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -189,7 +181,12 @@ public class CartFragment extends Fragment {
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_cartFragment_to_coffeeListFragment);
+                String back = CartFragmentArgs.fromBundle(getArguments()).getCategory();
+                if (back.equalsIgnoreCase("kopi")){
+                    navController.navigate(R.id.action_cartFragment_to_coffeeListFragment);
+                }else if (back.equalsIgnoreCase("Kue")){
+                    navController.navigate(R.id.action_cartFragment_to_cakeListFragment);
+                }
             }
         });
     }

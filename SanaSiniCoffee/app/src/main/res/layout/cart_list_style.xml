@@ -6,7 +6,7 @@
 
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardcartlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                 android:layout_height="100dp"
                 android:src="@drawable/ic_launcher_background" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/cartcoffeename"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,9 +37,10 @@
                 android:text="Coffee Name"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/orderdetailcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,9 +51,10 @@
                 android:layout_toRightOf="@id/cartImage"
                 android:text="Hot | Small"
                 android:textColor="@color/black"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_light"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/orderdetailquantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,9 +65,10 @@
                 android:layout_toRightOf="@id/cartImage"
                 android:text="Quantity"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_semibold"/>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/orderdetailprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,8 +81,9 @@
                 android:text="Total price"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_medium"/>
 
         </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>
