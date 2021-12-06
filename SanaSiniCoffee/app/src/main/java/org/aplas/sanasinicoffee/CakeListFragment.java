@@ -44,7 +44,7 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
     RecyclerView recyclerView;
     CakeViewModel viewModel;
     NavController navController;
-    FloatingActionButton fab, fabcoffe;
+    FloatingActionButton fab;
     BottomNavigationView bottomNavigationView;
     int jumlahsum;
     TextView jumlahCart;
@@ -72,7 +72,6 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-        fabcoffe = view.findViewById(R.id.fabcoffe);
         bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
         NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
@@ -110,12 +109,6 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_cakeListFragment_to_cartFragment);
-            }
-        });
-        fabcoffe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_cakeListFragment_to_coffeeListFragment);
             }
         });
     }

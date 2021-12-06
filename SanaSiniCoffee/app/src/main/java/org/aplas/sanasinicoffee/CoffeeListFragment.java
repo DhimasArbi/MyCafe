@@ -40,9 +40,9 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
     RecyclerView recyclerView;
     CoffeeViewModel viewModel;
     NavController navController;
-    FloatingActionButton fab, fabcake;
+    FloatingActionButton fab;
     BottomNavigationView bottomNavigationView;
-    int jumlah, jumlahsum;
+    int jumlahsum;
     TextView jumlahCart;
     List<Integer> savequantity = new ArrayList<>();
 
@@ -67,7 +67,6 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         navController = Navigation.findNavController(view);
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
-        fabcake = view.findViewById(R.id.fabcake);
         bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
         NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
@@ -104,12 +103,6 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_coffeeListFragment_to_cartFragment);
-            }
-        });
-        fabcake.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_coffeeListFragment_to_cakeListFragment);
             }
         });
 

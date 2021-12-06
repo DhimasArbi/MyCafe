@@ -8,8 +8,4 @@
         android:id="@+id/cakeListFragment"
         android:title="Cake"
         android:icon="@drawable/fabcake"/>
-    <item
-        android:id="@+id/cartFragment"
-        android:title="Order"
-        android:icon="@drawable/cart"/>
 </menu>

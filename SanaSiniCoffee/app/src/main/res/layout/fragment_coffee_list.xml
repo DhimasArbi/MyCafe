@@ -14,17 +14,6 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabcake"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="174dp"
-        android:src="@drawable/fabcake" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -41,8 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="63dp"
-        android:layout_marginBottom="122dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="127dp"
         android:elevation="16dp"
         android:text=""
         android:textColor="@color/black"
