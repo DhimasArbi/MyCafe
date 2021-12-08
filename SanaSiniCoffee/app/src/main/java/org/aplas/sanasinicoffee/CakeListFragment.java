@@ -73,9 +73,6 @@ public class CakeListFragment extends Fragment implements CakeAdapter.GetOneCake
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
         bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
-//        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
-//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         viewModel = new ViewModelProvider(getActivity()).get(CakeViewModel.class);
         viewModel.getCakeList().observe(getViewLifecycleOwner(), new Observer<List<CakeModel>>() {
             @Override

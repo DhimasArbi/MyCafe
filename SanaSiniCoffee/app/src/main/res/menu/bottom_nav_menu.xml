@@ -4,7 +4,7 @@
         <item
             android:id="@+id/coffeeListFragment"
             android:title="Coffee"
-            android:icon="@drawable/cuplogo"
+            android:icon="@drawable/fabcoffe"
             app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/cakeListFragment"

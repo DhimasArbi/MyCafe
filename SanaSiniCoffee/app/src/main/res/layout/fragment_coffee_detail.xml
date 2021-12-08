@@ -19,7 +19,7 @@
         android:layout_marginTop="211dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="8dp"
         app:cardElevation="8dp">
 
         <RelativeLayout
@@ -41,7 +41,7 @@
         android:layout_below="@id/card1"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         style="@style/Widget.MaterialComponents.CardView">
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/line1"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/poppins_regular"
@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coffeedetaildetail"
                 android:orientation="horizontal"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -179,7 +179,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ll1"
                 android:orientation="horizontal"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp">
 
                 <RelativeLayout
@@ -230,17 +230,18 @@
             </LinearLayout>
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/t"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll2"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Total Harga"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="normal"
-                android:fontFamily="@font/poppins_bold"/>
+                android:textStyle="normal" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/orderINFO"
@@ -248,13 +249,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll2"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
-                android:text="Rp "
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Rp 0"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="italic"
-                android:fontFamily="@font/poppins_italic"/>
+                android:textSize="18sp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/orderdetail"
@@ -262,14 +262,14 @@
                 android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/orderINFO"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_btn"
+                android:fontFamily="@font/poppins_bold"
                 android:text="Order"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold"/>
-
+                android:textColor="@color/white" />
 
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>

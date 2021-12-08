@@ -37,8 +37,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/poppins_bold"/>
-
-
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

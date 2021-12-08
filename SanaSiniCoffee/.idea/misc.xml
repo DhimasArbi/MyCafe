@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/drawable/cartwhite.xml" value="0.26623931623931624" />
         <entry key="app/src/main/res/drawable/coffee_cup.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/drawable/donut.xml" value="0.32447916666666665" />
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_35.xml" value="0.32447916666666665" />
         <entry key="app/src/main/res/drawable/ic_baseline_remove_circle_24.xml" value="0.32447916666666665" />
@@ -51,6 +52,7 @@
         <entry key="app/src/main/res/layout/fragment_coffee_detail.xml" value="0.30416666666666664" />
         <entry key="app/src/main/res/layout/fragment_coffee_list.xml" value="0.264" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.30416666666666664" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/icon.xml" value="0.32447916666666665" />
       </map>
     </option>
   </component>

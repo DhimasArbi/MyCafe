@@ -68,9 +68,6 @@ public class CoffeeListFragment extends Fragment implements CoffeeAdapter.GetOne
         jumlahCart = view.findViewById(R.id.quantityOnfAB);
         fab = view.findViewById(R.id.fab);
         bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
-//        bottomNavigationView =view.findViewById(R.id.bottomNavigationView);
-//        NavHostFragment navHostFragment = (NavHostFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.fragment);
-//        NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
         viewModel = new ViewModelProvider(getActivity()).get(CoffeeViewModel.class);
         viewModel.getCofeeList().observe(getViewLifecycleOwner(), new Observer<List<CoffeeModel>>() {
             @Override

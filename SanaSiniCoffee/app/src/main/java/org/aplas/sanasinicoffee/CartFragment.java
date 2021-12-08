@@ -119,10 +119,8 @@ public class CartFragment extends Fragment {
                     firestore.collection("Coffee").document(deleteitem.getId()).update("jumlah", 0);
                     firestore.collection("Coffee").document(deleteitem.getId()).update("jenis", "Panas");
                     firestore.collection("Coffee").document(deleteitem.getId()).update("ukuran", "Kecil");
-//                    firestore.collection("Cart").document(deleteitem.getId()).delete();
                 }else if (deleteitem.getCategory().equalsIgnoreCase("Kue")){
                     firestore.collection("Cake").document(deleteitem.getId()).update("jumlah", 0);
-//                    firestore.collection("Cart").document(deleteitem.getId()).delete();
                 }else {
 
                 }
